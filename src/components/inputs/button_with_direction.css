@@ -1,0 +1,9 @@
+.MuiButton-textPrimary {
+  color: var(--dr-font-color);
+  padding-bottom: 0rem;
+  border-radius: 0 !important;
+}
+
+.MuiButton-textPrimary:hover {
+  text-decoration: underline;
+}

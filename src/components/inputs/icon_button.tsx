@@ -1,4 +1,4 @@
-import { IconButton as MButton } from "@mui/material";
+import { IconButton as MIconButton } from "@mui/material";
 import "./icon_button.css";
 
 interface TButton {
@@ -7,16 +7,16 @@ interface TButton {
   danger?: boolean;
 }
 export const IconButton: React.FC<
-  React.ComponentProps<typeof MButton> & TButton
+  React.ComponentProps<typeof MIconButton> & TButton
 > = (props: any) => {
   if (props.primary)
-    return <MButton {...props} variant='contained' color='primary' />;
+    return <MIconButton {...props} variant='contained' color='primary' />;
 
   if (props.secondary)
-    return <MButton {...props} variant='outlined' color='primary' />;
+    return <MIconButton {...props} variant='outlined' color='primary' />;
 
   if (props.danger)
-    return <MButton {...props} variant='contained' color='error' />;
+    return <MIconButton {...props} variant='contained' color='error' />;
 
-  return <MButton {...props} />;
+  return <MIconButton {...props} />;
 };

@@ -1,4 +1,5 @@
 import { Button, Icon, IconButton } from "./components";
+import { ButtonWithDirection } from "./components/inputs/button_with_direction";
 
 function App() {
   return (
@@ -17,6 +18,19 @@ function App() {
       <IconButton danger>
         <Icon name='heart' />
       </IconButton>
+      <h1>Icon Arrow</h1>
+      <ButtonWithDirection primary direction='right'>
+        Primary right
+      </ButtonWithDirection>
+      <ButtonWithDirection primary direction='left'>
+        Primary left
+      </ButtonWithDirection>
+      <ButtonWithDirection secondary direction='right'>
+        Secondary right
+      </ButtonWithDirection>
+      <ButtonWithDirection secondary direction='left'>
+        Secondary left
+      </ButtonWithDirection>
     </main>
   );
 }
