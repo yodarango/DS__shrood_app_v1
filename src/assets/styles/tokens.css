@@ -1,0 +1,207 @@
+/* --------------- lset up fonts ---------- */
+/* Open Sans regular */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("../assets/fonts/Open_Sans/open-sans-v29-latin-regular.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/Open_Sans/open-sans-v29-latin-regular.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-500 - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""),
+    url("../assets/fonts/Open_Sans/open-sans-v29-latin-500.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/Open_Sans/open-sans-v29-latin-500.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* Open Sans 700 */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""),
+    url("../assets/fonts/Open_Sans/open-sans-v29-latin-700.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/Open_Sans/open-sans-v29-latin-700.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* Open Sans 800 */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""),
+    url("../assets/fonts/Open_Sans/open-sans-v29-latin-800.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/Open_Sans/open-sans-v29-latin-800.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Open Sans 400 --italic */
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""),
+    url("../assets/fonts/Open_Sans/open-sans-v29-latin-italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/Open_Sans/open-sans-v29-latin-italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Open Sans 500 --italic */
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""),
+    url("../assets/fonts/Open_Sans/open-sans-v29-latin-500italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/Open_Sans/open-sans-v29-latin-500italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Open Sans 700 --italic */
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""),
+    url("../assets/fonts/Open_Sans/open-sans-v29-latin-700italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/Open_Sans/open-sans-v29-latin-700italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Open Sans 800 --italic */
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""),
+    url("../assets/fonts/Open_Sans/open-sans-v29-latin-800italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../assets/fonts/Open_Sans/open-sans-v29-latin-800italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+:root {
+  /* fonts  */
+  --dr-font-sans-serif: system-ui, -apple-system, "Open Sans", Roboto,
+    "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --dr-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --dr-body-font-family: var(--dr-font-sans-serif);
+  --dr-body-font-size: 1.6rem;
+  --dr-body-font-weight: 400;
+  --dr-body-line-height: 1.6;
+  --dr-font-size-6: 1rem;
+  --dr-font-size-5: 1.2rem;
+  --dr-font-size-4: 1.6rem;
+  --dr-font-size-3: 1.8rem;
+  --dr-font-size-2: 2rem;
+  --dr-font-size-1: 2.4rem;
+  --dr-font-size-0: 3rem;
+
+  /* radiuses */
+  --dr-border-radius-sm: 0.5em;
+  --dr-border-radius: 0.75em;
+  --dr-border-radius-lg: 1.25em;
+  --dr-border-radius-xl: 2em;
+  --dr-border-radius-xxl: 3em;
+
+  /* borders */
+  --dr-border-width: 1px;
+  --dr-border-style: solid;
+  --dr-border-color: #ffffff;
+
+  /* buttons */
+  --dr-btn-padding-y: 1rem;
+  --dr-btn-padding-x: 1.6rem;
+  --dr-btn-font-family: var(--dr-font-sans-serif);
+  --dr-btn-font-size: 1.6rem;
+  --dr-btn-font-weight: 400;
+}
+
+:root,
+[data-bs-theme="light"] {
+  color-scheme: light;
+  /* app colors  */
+  --dr-font-color: #f1eaff; /* app lettering */
+  --dr-font-color--darker: #ff89a9;
+  --dr-primary: #130e21; /* app background */
+  --dr-secondary: #201a30; /* app foreground contrast */
+  --dr-tertiary: #7148c6; /* app foreground on foreground */
+  --dr-quaternary: #b293fe; /* app accent */
+  --dr-quinary: #7350ec;
+  --dr-senary: #ff3269;
+  --dr-septenary: #ff8655;
+  --dr-octonary: #ced4da;
+  --dr-nonary: #adb5bd;
+  --dr-denary: #6c757d;
+
+  /* stateful colors */
+  --dr-success: #6af548;
+  --dr-success-subtle: #7fdc7d;
+  --dr-info: #0dcaf0;
+  --dr-info-subtle: #cff4fc;
+  --dr-warning: #ffc107;
+  --dr-warning-subtle: #fff3cd;
+  --dr-danger: #ff4d62;
+  --dr-danger-subtle: #f8d7da;
+
+  /* shadows */
+  --dr-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --dr-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --dr-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  --dr-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+
+[data-bs-theme="dark"] {
+  color-scheme: dark;
+  /* app colors */
+  --dr-font-color: #f1eaff; /* app lettering */
+  --dr-font-color--darker: #ff89a9;
+  --dr-primary: #130e21; /* app background */
+  --dr-secondary: #201a30; /* app foreground contrast */
+  --dr-tertiary: #7148c6; /* app foreground on foreground */
+  --dr-quaternary: #b293fe; /* app accent */
+  --dr-quinary: #7350ec;
+  --dr-senary: #ff3269;
+  --dr-septenary: #ff8655;
+  --dr-octonary: #ced4da;
+  --dr-nonary: #adb5bd;
+  --dr-denary: #6c757d;
+
+  /* stateful colors */
+  --dr-success: #6af548;
+  --dr-success-subtle: #7fdc7d;
+  --dr-info: #0dcaf0;
+  --dr-info-subtle: #cff4fc;
+  --dr-warning: #ffc107;
+  --dr-warning-subtle: #fff3cd;
+  --dr-danger: #ff4d62;
+  --dr-danger-subtle: #f8d7da;
+
+  /* shadows */
+  --dr-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --dr-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --dr-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  --dr-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+}
