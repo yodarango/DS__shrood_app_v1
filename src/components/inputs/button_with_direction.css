@@ -1,9 +1,25 @@
 .MuiButton-textPrimary {
-  color: var(--dr-font-color);
+  color: var(--dr-font-color) !important;
   padding-bottom: 0rem;
   border-radius: 0 !important;
 }
 
 .MuiButton-textPrimary:hover {
   text-decoration: underline;
+}
+.MuiButton-textPrimary * {
+  stroke: var(--dr-font-color);
+}
+
+.MuiButton-textInfo {
+  color: var(--quaternary) !important;
+  padding-bottom: 0rem;
+  border-radius: 0 !important;
+}
+
+.MuiButton-textInfo:hover {
+  text-decoration: underline;
+}
+.MuiButton-textInfo * {
+  stroke: var(--quaternary);
 }

@@ -2720,29 +2720,56 @@ fieldset:disabled .btn {
 .color-primary {
   color: var(--dr-primary) !important;
 }
+.color-primary * {
+  stroke: var(--dr-primary) !important;
+}
 .color-secondary {
   color: var(--dr-secondary) !important;
+}
+.color-secondary * {
+  stroke: var(--dr-secondary) !important;
 }
 .color-tertiary {
   color: var(--dr-tertiary) !important;
 }
+.color-tertiary * {
+  stroke: var(--dr-tertiary) !important;
+}
 .color-quaternary {
   color: var(--dr-quaternary) !important;
+}
+.color-quaternary * {
+  stroke: var(--dr-quaternary) !important;
 }
 .color-quinary {
   color: var(--dr-quinary) !important;
 }
+.color-quinary * {
+  stroke: var(--dr-quinary) !important;
+}
 .color-success {
   color: var(--dr-success) !important;
+}
+.color-success * {
+  stroke: var(--dr-success) !important;
 }
 .color-danger {
   color: var(--dr-danger) !important;
 }
+.color-danger * {
+  stroke: var(--dr-danger) !important;
+}
 .color-warning {
   color: var(--dr-warning) !important;
 }
+.color-warning * {
+  stroke: var(--dr-warning) !important;
+}
 .color-info {
   color: var(--dr-info) !important;
+}
+.color-info * {
+  stroke: var(--dr-info) !important;
 }
 .color-black {
   color: var(--dr-black) !important;
@@ -2765,6 +2792,24 @@ fieldset:disabled .btn {
 .color-quaternary {
   color: var(--dr-quaternary) !important;
 }
+.color-quinary {
+  color: var(--dr-quinary) !important;
+}
+.color-senary {
+  color: var(--dr-senary) !important;
+}
+.color-septenary {
+  color: var(--dr-septenary) !important;
+}
+.color-octonary {
+  color: var(--dr-octonary) !important;
+}
+.color-nonary {
+  color: var(--dr-nonary) !important;
+}
+.color-denary {
+  color: var(--dr-denary) !important;
+}
 .bg-primary {
   background-color: var(--dr-primary) !important;
 }
@@ -2777,9 +2822,25 @@ fieldset:disabled .btn {
 .bg-quaternary {
   background-color: var(--dr-quaternary) !important;
 }
-.color-quinary {
+.bg-quinary {
   background-color: var(--dr-quinary) !important;
 }
+.bg-senary {
+  background-color: var(--dr-senary) !important;
+}
+.bg-septenary {
+  background-color: var(--dr-septenary) !important;
+}
+.bg-octonary {
+  background-color: var(--dr-octonary) !important;
+}
+.bg-nonary {
+  background-color: var(--dr-nonary) !important;
+}
+.bg-denary {
+  background-color: var(--dr-denary) !important;
+}
+
 .bg-success {
   background-color: var(--dr-success) !important;
 }

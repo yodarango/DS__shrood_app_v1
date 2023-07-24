@@ -1,0 +1,14 @@
+.small img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.medium img {
+  width: 15rem;
+  height: 15rem;
+}
+
+.large img {
+  width: 20rem;
+  height: 20rem;
+}

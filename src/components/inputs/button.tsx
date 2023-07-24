@@ -9,14 +9,14 @@ interface TButton {
 export const Button: React.FC<
   React.ComponentProps<typeof MButton> & TButton
 > = (props: any) => {
-  if (props.primary)
-    return <MButton {...props} variant='contained' color='primary' />;
+  const { primary, secondary, danger, ...rest } = props;
 
-  if (props.secondary)
-    return <MButton {...props} variant='outlined' color='primary' />;
+  if (primary) return <MButton {...rest} variant='contained' color='primary' />;
 
-  if (props.danger)
-    return <MButton {...props} variant='contained' color='error' />;
+  if (secondary)
+    return <MButton {...rest} variant='outlined' color='primary' />;
 
-  return <MButton {...props} />;
+  if (danger) return <MButton {...rest} variant='contained' color='error' />;
+
+  return <MButton {...rest} />;
 };

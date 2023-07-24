@@ -6,50 +6,51 @@ type IButtonWithDirection = {
   children: React.ReactNode | JSX.Element | string;
   direction?: "left" | "right";
   secondary?: boolean;
+  iconColor?: string;
   primary?: boolean;
 };
 
 export const ButtonWithDirection: React.FC<
   React.ComponentProps<typeof MButton> & IButtonWithDirection
 > = (props: any) => {
-  if (props.primary && props.direction === "right")
+  const { direction, primary, secondary, ...rest } = props;
+
+  if (primary && props.direction === "right")
     return (
       <MButton
-        {...props}
-        endIcon={<Icon color={props.color} name='arrowForth' />}
+        {...rest}
+        endIcon={<Icon className={props.className} name='arrowForth' />}
+      >
+        {props.children}
+      </MButton>
+    );
+  if (primary && direction === "left")
+    return (
+      <MButton
+        {...rest}
+        variant='text'
+        startIcon={<Icon className={props.className} name='arrowBack' />}
+      >
+        {props.children}
+      </MButton>
+    );
+  if (secondary && direction === "right")
+    return (
+      <MButton
+        {...rest}
+        variant='text'
+        endIcon={<Icon className={props.className} name='arrowForthLong' />}
       >
         {" "}
         {props.children}
       </MButton>
     );
-  if (props.primary && props.direction === "left")
+  if (secondary && direction === "left")
     return (
       <MButton
-        {...props}
+        {...rest}
         variant='text'
-        startIcon={<Icon color={props.color} name='arrowBack' />}
-      >
-        {" "}
-        {props.children}
-      </MButton>
-    );
-  if (props.secondary && props.direction === "right")
-    return (
-      <MButton
-        {...props}
-        variant='text'
-        endIcon={<Icon color={props.color} name='arrowForthLong' />}
-      >
-        {" "}
-        {props.children}
-      </MButton>
-    );
-  if (props.secondary && props.direction === "left")
-    return (
-      <MButton
-        {...props}
-        variant='text'
-        startIcon={<Icon color={props.color} name='arrowBackLong' />}
+        startIcon={<Icon className={props.className} name='arrowBackLong' />}
       >
         {props.children}
       </MButton>

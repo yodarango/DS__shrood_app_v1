@@ -1,0 +1,60 @@
+.MuiTabs-flexContainer {
+  justify-content: space-between;
+}
+
+.MuiTab-textColorSecondary,
+.MuiTab-textColorSecondary.Mui-selected,
+.MuiTab-textColorPrimary,
+.MuiTab-textColorPrimary.Mui-selected {
+  color: var(--dr-tertiary) !important;
+  font-family: var(--dr-body-font-family) !important;
+  font-weight: var(--dr-body-font-weight) !important;
+  line-height: var(--dr-body-line-height) !important;
+  font-size: var(--dr-body-font-size) !important;
+  text-transform: none !important;
+  padding: 0 1.6rem !important;
+  line-height: 1 !important;
+  min-height: 4.8rem !important;
+}
+
+.MuiTab-textColorPrimary,
+.MuiTab-textColorPrimary.Mui-selected {
+  color: var(--dr-font-color) !important;
+}
+
+.css-11yukd5-MuiTabs-indicator {
+  background-color: var(--dr-tertiary) !important;
+  height: 0.3rem !important;
+  border-radius: 1em;
+}
+.css-1aquho2-MuiTabs-indicator {
+  background-color: var(--dr-font-color) !important;
+  height: 0.3rem !important;
+  border-radius: 1em;
+}
+
+/* icon */
+.MuiTab-textColorPrimary,
+.MuiTab-textColorPrimary *,
+.MuiTab-textColorSecondary,
+.MuiTab-textColorSecondary * {
+  opacity: 0.75;
+}
+.MuiTab-textColorPrimary.Mui-selected *,
+.MuiTab-textColorPrimary.Mui-selected {
+  stroke: var(--dr-font-color) !important;
+  opacity: 1;
+}
+
+.MuiTab-textColorSecondary.Mui-selected *,
+.MuiTab-textColorSecondary.Mui-selected {
+  stroke: var(--dr-tertiary) !important;
+  opacity: 1;
+}
+
+.dr-tabs-border {
+  background-color: var(--dr-octonary);
+  height: 0.1rem;
+  position: absolute;
+  bottom: 0.1rem;
+}

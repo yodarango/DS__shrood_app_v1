@@ -9,14 +9,15 @@ interface TButton {
 export const IconButton: React.FC<
   React.ComponentProps<typeof MIconButton> & TButton
 > = (props: any) => {
-  if (props.primary)
-    return <MIconButton {...props} variant='contained' color='primary' />;
+  const { primary, secondary, danger, ...rest } = props;
+  if (primary)
+    return <MIconButton {...rest} variant='contained' color='primary' />;
 
-  if (props.secondary)
-    return <MIconButton {...props} variant='outlined' color='primary' />;
+  if (secondary)
+    return <MIconButton {...rest} variant='outlined' color='primary' />;
 
-  if (props.danger)
-    return <MIconButton {...props} variant='contained' color='error' />;
+  if (danger)
+    return <MIconButton {...rest} variant='contained' color='error' />;
 
-  return <MIconButton {...props} />;
+  return <MIconButton {...rest} />;
 };

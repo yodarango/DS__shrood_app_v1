@@ -1,5 +1,17 @@
-import { Button, Icon, IconButton } from "./components";
-import { ButtonWithDirection } from "./components/inputs/button_with_direction";
+import { FONT_COLOR } from "./assets/tokens";
+import {
+  ButtonWithDirection,
+  ErrorImage,
+  IconButton,
+  Paragraph,
+  Heading,
+  Button,
+  Icon,
+  ResourceNotFoundImage,
+  FinancialHelpImage,
+  EmptyImage,
+  Tabs,
+} from "./components";
 
 function App() {
   return (
@@ -18,19 +30,69 @@ function App() {
       <IconButton danger>
         <Icon name='heart' />
       </IconButton>
-      <h1>Icon Arrow</h1>
-      <ButtonWithDirection primary direction='right'>
-        Primary right
+      <h1>Icon With Direction</h1>
+      <ButtonWithDirection primary direction='right' color='info'>
+        Primary right info
       </ButtonWithDirection>
       <ButtonWithDirection primary direction='left'>
         Primary left
       </ButtonWithDirection>
-      <ButtonWithDirection secondary direction='right'>
-        Secondary right
+      <ButtonWithDirection secondary direction='right' color='info'>
+        Secondary right info
       </ButtonWithDirection>
       <ButtonWithDirection secondary direction='left'>
         Secondary left
       </ButtonWithDirection>
+      <h1>Typography</h1>
+      <Paragraph>Paragraph</Paragraph>
+      <Heading variant='h6'>H6</Heading>
+      <Heading variant='h5'>H5</Heading>
+      <Heading variant='h4'>H4</Heading>
+      <Heading variant='h3'>H3</Heading>
+      <Heading variant='h2'>H2</Heading>
+      <Heading variant='h1'>H1</Heading>
+      <h1>Feedback Images</h1>
+      <ErrorImage />
+      <ResourceNotFoundImage />
+      <FinancialHelpImage />
+      <EmptyImage />
+      <h1>Navigation</h1>
+      <Tabs
+        tabs={[
+          { label: "one", value: 1 },
+          { label: "two", value: 2 },
+          { label: "three", value: 3 },
+        ]}
+        primary
+      />
+      <Tabs
+        tabs={[
+          { label: "one", value: 1, icon: "heart" },
+          { label: "two", value: 2 },
+          { label: "three", value: 3 },
+        ]}
+        secondary
+      />
+      <Tabs
+        tabs={[
+          {
+            icon: <Icon name='heart' color={FONT_COLOR} />,
+            iconPosition: "start",
+            value: 1,
+          },
+          {
+            icon: <Icon name='trash' color={FONT_COLOR} />,
+            iconPosition: "start",
+            value: 2,
+          },
+          {
+            icon: <Icon name='sparkles' color={FONT_COLOR} />,
+            iconPosition: "start",
+            value: 3,
+          },
+        ]}
+        secondary
+      />
     </main>
   );
 }

@@ -147,12 +147,13 @@
   --dr-font-color--darker: #ff89a9;
   --dr-primary: #130e21; /* app background */
   --dr-secondary: #201a30; /* app foreground contrast */
-  --dr-tertiary: #7148c6; /* app foreground on foreground */
+  --dr-tertiary: #7b00ff; /* app foreground on foreground */
+  /* --dr-tertiary: #a692d7; */
   --dr-quaternary: #b293fe; /* app accent */
   --dr-quinary: #7350ec;
   --dr-senary: #ff3269;
   --dr-septenary: #ff8655;
-  --dr-octonary: #ced4da;
+  --dr-octonary: #8d82a8;
   --dr-nonary: #adb5bd;
   --dr-denary: #6c757d;
 

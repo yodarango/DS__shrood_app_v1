@@ -1,20 +1,24 @@
+.MuiIconButton-root {
+  padding: 4px !important;
+}
+
 .MuiIconButton-colorPrimary {
   background-image: linear-gradient(
     -10deg,
     var(--dr-quaternary),
-    var(--dr-tertiary)
+    var(--dr-quinary)
   );
   border-radius: var(--dr-border-radius) !important;
 }
 
 .MuiIconButton-colorPrimary:is([variant="outlined"]) {
-  border: 1px solid var(--dr-quaternary) !important;
+  border: 1px solid var(--dr-tertiary) !important;
   background: none;
   border-radius: var(--dr-border-radius) !important;
 }
 
 .MuiIconButton-colorPrimary:is([variant="outlined"]) * {
-  stroke: var(--dr-quaternary);
+  stroke: var(--dr-tertiary);
 }
 
 .MuiIconButton-colorError {

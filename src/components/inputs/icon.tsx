@@ -1,3 +1,6 @@
+import { FONT_COLOR } from "../../assets/tokens";
+import "./icon.css";
+
 type TIcons = {
   strokeWidth?: string;
   className?: string;
@@ -7,9 +10,9 @@ type TIcons = {
 };
 
 export const Icon = ({
-  color = "#f1eAff",
+  color = FONT_COLOR,
   className = "",
-  size = "2rem",
+  size = "3rem",
   strokeWidth,
   name,
 }: TIcons) => {
@@ -1375,7 +1378,7 @@ export const Icon = ({
       );
       break;
 
-    case "article":
+    case "article2":
       icon = (
         <svg viewBox=' 0 0 16 16'>
           <path
@@ -1523,6 +1526,7 @@ export const Icon = ({
       break;
   }
 
+  console.log("icon", color);
   return (
     <div
       style={{ width: size, height: size }}

@@ -9,14 +9,14 @@
   background-image: linear-gradient(
     -10deg,
     var(--dr-quaternary),
-    var(--dr-tertiary)
+    var(--dr-quinary)
   );
   color: var(--font-color) !important;
 }
 
 .MuiButton-outlinedPrimary {
-  color: var(--dr-quaternary) !important;
-  border-color: var(--dr-quaternary) !important;
+  color: var(--dr-tertiary) !important;
+  border-color: var(--dr-tertiary) !important;
 }
 
 .MuiButton-containedError {
