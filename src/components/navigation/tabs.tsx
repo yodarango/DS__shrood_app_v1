@@ -1,24 +1,13 @@
 import { Tabs as MTabs, Tab as MTab } from "@mui/material";
-import React, { JSXElementConstructor, ReactElement, useState } from "react";
+import { useEffect, useState } from "react";
 import "./tabs.css";
-
-type TTab = {
-  icon?:
-    | string
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | undefined;
-  label?: string | number | JSX.Element | React.ReactNode;
-  iconPosition?: "start" | "end" | "top" | "bottom";
-  value: string | number;
-  className?: string;
-};
 
 interface TTabs {
   tabBorderClassName?: string;
   secondary?: boolean;
-  defaultTab?: number;
+  defaultTab: number;
   primary?: boolean;
-  tabs: TTab[];
+  tabs: any;
 }
 export const Tabs: React.FC<React.ComponentProps<typeof MTabs> & TTabs> = (
   props: any
@@ -32,10 +21,9 @@ export const Tabs: React.FC<React.ComponentProps<typeof MTabs> & TTabs> = (
     ...rest
   } = props;
 
-  let whichDefaultTab = defaultTab ? defaultTab : tabs[0].value;
-  const [value, setValue] = useState(whichDefaultTab);
+  const [value, setValue] = useState<string | number>(defaultTab);
 
-  const handleChange = (_: any, newValue: string) => {
+  const handleChange = (_: any, newValue: string | number) => {
     if (props?.onChange) props.onChange(newValue);
     setValue(newValue);
   };
@@ -49,16 +37,21 @@ export const Tabs: React.FC<React.ComponentProps<typeof MTabs> & TTabs> = (
         indicatorColor={primary ? "primary" : "secondary"}
         {...rest}
       >
-        {tabs?.map((tab: TTab) => (
-          <MTab
-            iconPosition={tab.iconPosition}
-            className={tab.className || ""}
-            value={tab.value}
-            label={tab.label}
-            icon={tab.icon}
-            key={tab.value}
-          />
-        ))}
+        {tabs?.map((tab: any) => {
+          const { iconPosition, className, value, label, icon, ...rest } = tab;
+
+          return (
+            <MTab
+              iconPosition={iconPosition}
+              className={className || ""}
+              value={value}
+              label={label}
+              icon={icon}
+              key={value}
+              {...rest}
+            />
+          );
+        })}
       </MTabs>
       <div
         className={`w-100 d-inline-block dr-tabs-border ${tabBorderClassName}`}

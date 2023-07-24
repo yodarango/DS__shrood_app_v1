@@ -11,6 +11,7 @@ import {
   FinancialHelpImage,
   EmptyImage,
   Tabs,
+  BottomNavigation,
 } from "./components";
 
 function App() {
@@ -28,8 +29,9 @@ function App() {
         <Icon name='sparkles' />
       </IconButton>
       <IconButton danger>
-        <Icon name='heart' />
+        <Icon name='add' />
       </IconButton>
+
       <h1>Icon With Direction</h1>
       <ButtonWithDirection primary direction='right' color='info'>
         Primary right info
@@ -63,14 +65,16 @@ function App() {
           { label: "two", value: 2 },
           { label: "three", value: 3 },
         ]}
+        defaultTab={1}
         primary
       />
       <Tabs
         tabs={[
-          { label: "one", value: 1, icon: "heart" },
+          { label: "one", value: 1 },
           { label: "two", value: 2 },
           { label: "three", value: 3 },
         ]}
+        defaultTab={2}
         secondary
       />
       <Tabs
@@ -91,7 +95,26 @@ function App() {
             value: 3,
           },
         ]}
+        defaultTab={3}
         secondary
+      />
+      <BottomNavigation
+        className='mt-4'
+        defaultTab={2}
+        tabs={[
+          {
+            icon: <Icon name='heart' color={FONT_COLOR} />,
+            value: 1,
+          },
+          {
+            icon: <Icon name='trash' color={FONT_COLOR} />,
+            value: 2,
+          },
+          {
+            icon: <Icon name='sparkles' color={FONT_COLOR} />,
+            value: 3,
+          },
+        ]}
       />
     </main>
   );

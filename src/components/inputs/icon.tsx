@@ -21,7 +21,7 @@ export const Icon = ({
   switch (name) {
     case "add":
       icon = (
-        <svg viewBox='0 0 512 512'>
+        <svg viewBox='65 65 400 400'>
           <path
             fill='none'
             stroke={color}
@@ -1526,7 +1526,6 @@ export const Icon = ({
       break;
   }
 
-  console.log("icon", color);
   return (
     <div
       style={{ width: size, height: size }}

@@ -148,7 +148,6 @@
   --dr-primary: #130e21; /* app background */
   --dr-secondary: #201a30; /* app foreground contrast */
   --dr-tertiary: #7b00ff; /* app foreground on foreground */
-  /* --dr-tertiary: #a692d7; */
   --dr-quaternary: #b293fe; /* app accent */
   --dr-quinary: #7350ec;
   --dr-senary: #ff3269;
@@ -156,6 +155,8 @@
   --dr-octonary: #8d82a8;
   --dr-nonary: #adb5bd;
   --dr-denary: #6c757d;
+  --dr-color-shadow: #1a1723
+
 
   /* stateful colors */
   --dr-success: #6af548;
@@ -168,10 +169,10 @@
   --dr-danger-subtle: #f8d7da;
 
   /* shadows */
-  --dr-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  --dr-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --dr-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-  --dr-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  --dr-box-shadow: 0 0.5rem 1rem var(--shadow-color);
+  --dr-box-shadow-sm: 0 0.125rem 0.25rem var(--shadow-color);
+  --dr-box-shadow-lg: 0 1rem 3rem var(--shadow-color);
+  --dr-box-shadow-inset: inset 0 1px 2px var(--shadow-color);
 }
 
 [data-bs-theme="dark"] {
@@ -201,8 +202,8 @@
   --dr-danger-subtle: #f8d7da;
 
   /* shadows */
-  --dr-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  --dr-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --dr-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-  --dr-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  --dr-box-shadow: 0 0.5rem 1rem var(--shadow-color);
+  --dr-box-shadow-sm: 0 0.125rem 0.25rem var(--shadow-color);
+  --dr-box-shadow-lg: 0 1rem 3rem var(--shadow-color);
+  --dr-box-shadow-inset: inset 0 1px 2px var(--shadow-color);
 }

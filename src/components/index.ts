@@ -4,6 +4,7 @@ import "../assets/styles/utilities.css";
 export { ResourceNotFoundImage } from "./feedback/resource_not_found_image";
 export { ButtonWithDirection } from "./inputs/button_with_direction";
 export { FinancialHelpImage } from "./feedback/financial_help_image";
+export { BottomNavigation } from "./navigation/bottom_navigation";
 export { Paragraph } from "./data_display/paragraph";
 export { ErrorImage } from "./feedback/error_image";
 export { EmptyImage } from "./feedback/empty_image";

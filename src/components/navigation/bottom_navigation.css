@@ -1,0 +1,21 @@
+.MuiBottomNavigation-root {
+  border-top-left-radius: 3em !important;
+  border-top-right-radius: 3em !important;
+  box-shadow: var(--dr-box-shadow-lg) !important;
+  background-color: var(--dr-secondary) !important;
+  height: 4rem !important;
+  justify-content: space-between !important;
+  padding: 0 10% !important;
+}
+.MuiBottomNavigationAction-root {
+  border-radius: 0.5em !important;
+  max-width: 3rem !important;
+}
+
+.MuiBottomNavigationAction-root.Mui-selected {
+  background-image: linear-gradient(
+    -10deg,
+    var(--dr-quaternary),
+    var(--dr-quinary)
+  ) !important;
+}
