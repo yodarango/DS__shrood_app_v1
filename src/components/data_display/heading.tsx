@@ -7,7 +7,14 @@ interface THeading {
 export const Heading: React.FC<
   React.ComponentProps<typeof Typography> & THeading
 > = (props: any) => {
+  const { variant, lineHeight, component, fontWeight, ...rest } = props;
   return (
-    <Typography {...props} variant={props.variant} component={props.variant} />
+    <Typography
+      lineHeight={lineHeight || 1.6}
+      fontWeight={fontWeight || "bold"}
+      component={component}
+      variant={variant}
+      {...rest}
+    />
   );
 };

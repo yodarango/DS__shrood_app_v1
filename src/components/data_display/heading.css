@@ -1,7 +1,5 @@
 .MuiTypography-root {
   font-family: var(--dr-body-font-family) !important;
-  font-weight: var(--dr-body-font-weight) !important;
-  line-height: var(--dr-body-line-height) !important;
 }
 
 .MuiTypography-h1 {

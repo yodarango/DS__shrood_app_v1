@@ -12,7 +12,10 @@ import {
   EmptyImage,
   Tabs,
   BottomNavigation,
+  Avatar,
+  AvatarWithLabel,
 } from "./components";
+import image from "./assets/images/empty.webp";
 
 function App() {
   return (
@@ -115,6 +118,26 @@ function App() {
             value: 3,
           },
         ]}
+      />
+      <h1>Avatars</h1>
+      <Avatar src={image} primary sx={{ width: 100, height: 100 }} />
+      <Avatar src={image} secondary sx={{ width: 75, height: 75 }} />
+      <Avatar src={image} tertiary />
+      <Avatar src={image} error />
+      <AvatarWithLabel
+        sx={{ width: 30, height: 30 }}
+        label='username'
+        fontSize={10}
+        src={image}
+        secondary
+      />
+      <AvatarWithLabel src={image} label='username' align='end' />
+      <AvatarWithLabel src={image} label='username' fontSize={20} align='top' />
+      <AvatarWithLabel
+        src={image}
+        label='username'
+        fontSize={30}
+        align='bottom'
       />
     </main>
   );

@@ -1,0 +1,46 @@
+.MuiAvatar-root {
+  background-color: var(--dr-font-color);
+  width: 90% !important;
+  height: 90% !important;
+  border-radius: 40% !important ;
+}
+
+.MuiAvatar-root img {
+  background-color: var(--dr-font-color);
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ring-avatar-primary,
+.ring-avatar-secondary,
+.ring-avatar-tertiary,
+.ring-avatar-error {
+  width: 100%;
+  height: 100%;
+  border-radius: 40%;
+  background-image: linear-gradient(
+    -10deg,
+    var(--dr-quaternary),
+    var(--dr-quinary)
+  );
+}
+
+.ring-avatar-secondary {
+  background-image: linear-gradient(-10deg, var(--dr-denary), var(--dr-nonary));
+}
+
+.ring-avatar-tertiary {
+  background-image: linear-gradient(
+    -10deg,
+    var(--dr-undenary),
+    var(--dr-duodenary)
+  );
+}
+
+.ring-avatar-error {
+  background-image: linear-gradient(
+    -10deg,
+    var(--dr-septenary),
+    var(--dr-senary)
+  );
+}

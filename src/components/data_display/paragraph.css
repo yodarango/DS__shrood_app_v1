@@ -1,6 +1,3 @@
 .MuiTypography-body1 {
   font-family: var(--dr-body-font-family) !important;
-  font-weight: var(--dr-body-font-weight) !important;
-  line-height: var(--dr-body-line-height) !important;
-  font-size: var(--dr-body-font-size) !important;
 }
