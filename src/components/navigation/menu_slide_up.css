@@ -31,8 +31,11 @@
   border: 1px solid var(--dr-tertiary);
 }
 
+.dr-menuslideup-option-container:hover {
+  cursor: pointer;
+}
 /* item */
-.menuslideup-option-container_icon {
+.dr-menuslideup-option-container_icon {
   display: flex;
   align-items: center;
   justify-content: center;

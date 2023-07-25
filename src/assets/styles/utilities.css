@@ -1698,6 +1698,9 @@ fieldset:disabled .btn {
 .shadow-lg-light {
   box-shadow: var(--dr-box-shadow-lg--light) !important;
 }
+.shadow-box-tertiary {
+  box-shadow: var(--dr-shadow-tertiary) !important;
+}
 .shadow-none {
   box-shadow: none !important;
 }

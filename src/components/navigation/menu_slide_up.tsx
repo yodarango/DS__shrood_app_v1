@@ -1,7 +1,7 @@
 import { Icon, IconButton, Paragraph, Portal } from "..";
 import { CloseButton } from "../inputs/close_button";
 import { Heading } from "../data_display/heading";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   COLOR_QUATERNARY,
   COLOR_SEPTENARY,
@@ -67,6 +67,15 @@ export const MenuSlideUp = ({
     else setIsOpen(open);
   }, [open]);
 
+  // pass the variant to the children so you dont have to specify it in each
+  const childrenWithProps = React.Children.map(children, (child) => {
+    return React.cloneElement(child, {
+      secondary,
+      primary,
+      danger,
+    });
+  });
+
   return (
     <>
       <Portal portalId='portal'>
@@ -84,7 +93,9 @@ export const MenuSlideUp = ({
               </div>
             )}
             {typeof title !== "string" && title}
-            <div className='dr-menut-slidup-container_content'>{children}</div>
+            <div className='dr-menut-slidup-container_content'>
+              {childrenWithProps}
+            </div>
           </div>
         )}
       </Portal>
@@ -107,7 +118,6 @@ export const MenuSlideUp = ({
 
 type TMenuPrimaryOption = {
   onClick: (value: string | number | boolean) => void;
-  icon?: JSX.Element | React.ReactNode;
   value: string | number | boolean;
   iconProps?: typeof IconButton;
   secondary?: boolean;
@@ -115,9 +125,11 @@ type TMenuPrimaryOption = {
   primary?: boolean;
   danger?: boolean;
   children: any;
+  icon?: any;
 };
 
 export const MenuSlideUpItem = ({
+  iconProps,
   className,
   children,
   secondary,
@@ -127,19 +139,34 @@ export const MenuSlideUpItem = ({
   danger,
   icon,
 }: TMenuPrimaryOption) => {
-  const shadowClass = secondary ? "shadow" : "shadow-light";
+  const shadowClass = secondary ? "shadow-box-tertiary" : "shadow-light";
+
   return (
     <div
-      className={`menuslideup-option-container mb-2 ${className}`}
+      className={`dr-menuslideup-option-container mb-2 ${className}`}
       onClick={() => onClick(value)}
     >
       <div className='d-flex align-items-center justify-content-center'>
         <div
-          className={`ms-1 me-2 shrink-0 menuslideup-option-container_icon ${shadowClass}`}
+          className={`ms-1 me-2 shrink-0 dr-menuslideup-option-container_icon ${shadowClass}`}
         >
-          {icon}
+          {typeof icon === "string" && (
+            <IconButton
+              secondary={secondary}
+              primary={primary}
+              danger={danger}
+              {...iconProps}
+            >
+              <Icon name={icon} />
+            </IconButton>
+          )}
+          {icon &&
+            typeof icon !== "string" &&
+            React.cloneElement(icon, { secondary, primary, danger })}
         </div>
-        <div className='w-100'>{children}</div>
+        <div className='w-100 dr-menuslideup-option_label py-2 px-0'>
+          {children}
+        </div>
       </div>
     </div>
   );

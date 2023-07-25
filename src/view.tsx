@@ -122,16 +122,8 @@ function App() {
         ]}
       />
       <MenuSlideUp primary>
-        <MenuSlideUpItem
-          icon={
-            <IconButton primary>
-              <Icon name='add' />
-            </IconButton>
-          }
-          value={1}
-          onClick={() => {}}
-        >
-          My label with icon
+        <MenuSlideUpItem icon={"trash"} value={1} onClick={() => {}}>
+          My label with icon string
         </MenuSlideUpItem>
         <MenuSlideUpItem
           icon={
@@ -142,15 +134,43 @@ function App() {
           value={1}
           onClick={() => {}}
         >
-          My label with icon
+          My label with icon jsx
         </MenuSlideUpItem>
       </MenuSlideUp>
       <MenuSlideUp secondary>
-        <div>MenuSlideUp</div>
+        <MenuSlideUpItem icon={"trash"} value={1} onClick={() => {}}>
+          My label with icon string
+        </MenuSlideUpItem>
+        <MenuSlideUpItem
+          icon={
+            <IconButton sx={{ width: 30, height: 30 }}>
+              <Icon name='add' />
+            </IconButton>
+          }
+          value={1}
+          onClick={() => {}}
+        >
+          My label with icon jsx
+        </MenuSlideUpItem>
       </MenuSlideUp>
+
       <MenuSlideUp danger>
-        <div>MenuSlideUp</div>
+        <MenuSlideUpItem icon={"trash"} value={1} onClick={() => {}}>
+          My label with icon string
+        </MenuSlideUpItem>
+        <MenuSlideUpItem
+          icon={
+            <IconButton sx={{ width: 30, height: 30 }}>
+              <Icon name='add' />
+            </IconButton>
+          }
+          value={1}
+          onClick={() => {}}
+        >
+          My label with icon jsx
+        </MenuSlideUpItem>
       </MenuSlideUp>
+
       <h1>Avatars</h1>
       <Avatar src={image} primary sx={{ width: 100, height: 100 }} />
       <Avatar src={image} secondary sx={{ width: 75, height: 75 }} />
