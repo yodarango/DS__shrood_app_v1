@@ -119,6 +119,16 @@
   --dr-font-size-1: 2.4rem;
   --dr-font-size-0: 3rem;
 
+  /* spacings */
+  --dr-spacing-0: 0;
+  --dr-spacing-1: 0.4rem;
+  --dr-spacing-2: 0.8rem;
+  --dr-spacing-3: 1.2rem;
+  --dr-spacing-4: 1.6rem;
+  --dr-spacing-5: 2rem;
+  --dr-spacing-6: 2.4rem;
+  --main-wrapper-max-width: 50rem;
+
   /* radiuses */
   --dr-border-radius-sm: 0.5em;
   --dr-border-radius: 0.75em;
@@ -157,8 +167,8 @@
   --dr-denary: #9fff86;
   --dr-undenary: #07a0ff;
   --dr-duodenary: #0048ff;
-  --dr-color-shadow: #1a1723
-
+  --dr-color-shadow: #1a1723;
+  --dr-color-shadow--light: #f1eaff;
 
   /* stateful colors */
   --dr-success: #6af548;
@@ -171,10 +181,15 @@
   --dr-danger-subtle: #f8d7da;
 
   /* shadows */
-  --dr-box-shadow: 0 0.5rem 1rem var(--shadow-color);
-  --dr-box-shadow-sm: 0 0.125rem 0.25rem var(--shadow-color);
-  --dr-box-shadow-lg: 0 1rem 3rem var(--shadow-color);
-  --dr-box-shadow-inset: inset 0 1px 2px var(--shadow-color);
+  --dr-box-shadow-inset: inset 0 1px 2px var(--dr-color-shadow);
+  --dr-box-shadow-sm: 0 0.125rem 0.25rem var(--dr-color-shadow);
+  --dr-box-shadow-lg: 0 1rem 3rem var(--dr-color-shadow);
+  --dr-box-shadow: 0 0.5rem 1rem var(--dr-color-shadow);
+
+  --dr-box-shadow-sm--light: 0 0.125rem 0.25rem var(--dr-color-shadow--light);
+  --dr-box-shadow-inset--light: inset 0 1px 2px var(--dr-color-shadow--light);
+  --dr-box-shadow-lg--light: 0 1rem 3rem var(--dr-color-shadow--light);
+  --dr-box-shadow--light: 0 0.5rem 1rem var(--dr-color-shadow--light);
 }
 
 [data-bs-theme="dark"] {

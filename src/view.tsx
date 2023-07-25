@@ -14,8 +14,10 @@ import {
   BottomNavigation,
   Avatar,
   AvatarWithLabel,
+  MenuSlideUp,
 } from "./components";
 import image from "./assets/images/empty.webp";
+import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
 
 function App() {
   return (
@@ -119,6 +121,36 @@ function App() {
           },
         ]}
       />
+      <MenuSlideUp primary>
+        <MenuSlideUpItem
+          icon={
+            <IconButton primary>
+              <Icon name='add' />
+            </IconButton>
+          }
+          value={1}
+          onClick={() => {}}
+        >
+          My label with icon
+        </MenuSlideUpItem>
+        <MenuSlideUpItem
+          icon={
+            <IconButton primary sx={{ width: 30, height: 30 }}>
+              <Icon name='add' />
+            </IconButton>
+          }
+          value={1}
+          onClick={() => {}}
+        >
+          My label with icon
+        </MenuSlideUpItem>
+      </MenuSlideUp>
+      <MenuSlideUp secondary>
+        <div>MenuSlideUp</div>
+      </MenuSlideUp>
+      <MenuSlideUp danger>
+        <div>MenuSlideUp</div>
+      </MenuSlideUp>
       <h1>Avatars</h1>
       <Avatar src={image} primary sx={{ width: 100, height: 100 }} />
       <Avatar src={image} secondary sx={{ width: 75, height: 75 }} />

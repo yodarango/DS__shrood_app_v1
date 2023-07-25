@@ -400,7 +400,7 @@ export const Icon = ({
 
     case "close":
       icon = (
-        <svg viewBox='0 0 512 512'>
+        <svg viewBox='65 65 400 400'>
           <path
             fill='none'
             stroke={color}
