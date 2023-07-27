@@ -1,0 +1,45 @@
+.dr-expandable-tab-container_closed,
+.dr-expandable-tab-container_open {
+  padding: var(--spacing-xs);
+  border-radius: 3rem;
+  background-color: var(--secondary-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-s);
+  transition: 300ms transform ease-in;
+}
+
+.dr-expandable-tab-container_icon {
+  background-color: inherit;
+}
+
+.closed:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.open {
+  position: relative;
+  padding-right: var(--spacing-m);
+}
+
+.closeBtnWrapper {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  right: -1.5rem;
+  box-shadow: var(--shadow-s);
+  transition: 300ms transform ease-in;
+}
+
+.closeBtnWrapper:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}
