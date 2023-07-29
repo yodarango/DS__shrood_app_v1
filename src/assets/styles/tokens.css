@@ -158,6 +158,7 @@
   --dr-primary: #130e21; /* app background */
   --dr-secondary: #201a30; /* app foreground contrast */
   --dr-tertiary: #7b00ff; /* app foreground on foreground */
+  --dr-tertiary: #4a06ff;
   --dr-quaternary: #b293fe; /* app accent */
   --dr-quinary: #7350ec;
   --dr-senary: #ff3269;

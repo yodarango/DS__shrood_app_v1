@@ -1,7 +1,7 @@
-import { Icon, IconButton, Paragraph, Portal } from "..";
 import { CloseButton } from "../inputs/close_button";
-import { Heading } from "../data_display/heading";
 import React, { useEffect, useState } from "react";
+import { Heading } from "../data_display/heading";
+import { Icon, IconButton, Portal } from "..";
 import {
   COLOR_QUATERNARY,
   COLOR_SEPTENARY,
@@ -101,16 +101,23 @@ export const MenuSlideUp = ({
       </Portal>
 
       {typeof icon === "string" && (
-        <IconButton
-          {...iconProps}
-          {...iconVariants}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <Icon name={icon} />
-        </IconButton>
+        <div className='dr-menu-slideup-container-fg34'>
+          <IconButton
+            {...iconProps}
+            {...iconVariants}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <Icon name={icon} />
+          </IconButton>
+        </div>
       )}
       {typeof icon !== "string" && (
-        <div onClick={() => setIsOpen(!isOpen)}>{icon}</div>
+        <div
+          className='dr-menu-slideup-container-fg34'
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {icon}
+        </div>
       )}
     </>
   );

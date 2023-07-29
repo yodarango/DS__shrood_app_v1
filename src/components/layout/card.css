@@ -1,0 +1,17 @@
+.dr-card-34kt {
+  background-color: var(--dr-secondary);
+  border-radius: 1.5em;
+}
+
+.dr-card-image-04rq {
+  background-color: var(--dr-octonary);
+  border-radius: 1em;
+  overflow: hidden;
+  width: 100%;
+}
+.dr-card-image-04rq img {
+  object-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

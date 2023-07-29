@@ -15,6 +15,12 @@ import {
   Avatar,
   AvatarWithLabel,
   MenuSlideUp,
+  ExpandableTag,
+  CardOptions,
+  Card,
+  CardImage,
+  CardActionsLeft,
+  CardActionsRight,
 } from "./components";
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
@@ -191,6 +197,35 @@ function App() {
         fontSize={30}
         align='bottom'
       />
+      <ExpandableTag>
+        <Paragraph>display Data</Paragraph>
+        <Paragraph>Hide data </Paragraph>
+      </ExpandableTag>
+      <Card width={350}>
+        <CardImage alt='my image' src={image} height={200} />
+        <CardOptions icon='ellipsisH'>
+          <MenuSlideUpItem icon={"trash"} value={1} onClick={() => {}}>
+            My label with icon string
+          </MenuSlideUpItem>
+        </CardOptions>
+        <CardActionsLeft>
+          <IconButton className='p-0'>
+            <Icon name='heart' />
+          </IconButton>
+          <IconButton className='p-0'>
+            <Icon name='comment' />
+          </IconButton>
+        </CardActionsLeft>
+        <CardActionsRight>
+          <IconButton>
+            <ExpandableTag className='shadow'>
+              <Paragraph className='color-font'>12/12/63</Paragraph>
+              <Paragraph className='color-font'>04/09/67</Paragraph>
+            </ExpandableTag>
+          </IconButton>
+        </CardActionsRight>
+      </Card>
+      <div className='w-100 p-6'></div>
     </main>
   );
 }

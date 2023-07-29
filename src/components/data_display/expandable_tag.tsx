@@ -8,60 +8,53 @@
       3. Pass a css id in the props wich will assign a background by based in the 
          globals.css
 ***************************************************************************************/
-import { useState } from "react";
+import React, { useState } from "react";
 
 // comps
 import { Paragraph } from "..";
 import { Icon } from "..";
 
 // styles
-import styles from "./time_stamp.module.css";
+import "./expandable_tag.css";
 
 export type TimeStampProps = {
-  label: string | JSX.Element | React.ReactNode;
+  // hiddenLabel: string | JSX.Element | React.ReactNode;
+  // label: string | JSX.Element | React.ReactNode;
   labelProps?: typeof Paragraph;
-  iconProps: typeof Icon;
+  iconProps?: typeof Icon;
   className?: string;
-  fontSize?: string;
-  colorId?: string;
-  niceTime: string;
-  quiet?: boolean;
-  time: string;
+  children?: any;
+  // children: any;
 };
 
 export const ExpandableTag = ({
-  fontSize,
-
-  label,
-  hiddenLabel,
-
-  className,
-
-  labelProps,
+  className = "",
+  iconProps,
+  children,
 }: TimeStampProps) => {
-  const [isOpenTimeStamp, setIsOpenTimeStamp] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className={`dr-expandable-tab-container `}>
-      {!isOpenTimeStamp && (
+    <div className={`dr-expandable-tab-container d-inline-block`}>
+      {!isOpen && (
         <div
-          className={`dr-expandable-tab-container_closed ${className}`}
-          onClick={() => setIsOpenTimeStamp(true)}
+          className={`dr-expandable-tab-container_closed py-1 px-2 d-flex align-items-center justify-content-center ${className} `}
+          onClick={() => setIsOpen(true)}
         >
-          <Paragraph fontSize={fontSize || 10} lineHeight={1} {...labelProps}>
-            {label}
-          </Paragraph>
+          <div>{children[0]}</div>
         </div>
       )}
 
-      {isOpenTimeStamp && (
-        <div className={`dr-expandable-tab-container_open ${className}`}>
-          <Paragraph fontSize={fontSize || 10} {...labelProps}>
-            {hiddenLabel}
-          </Paragraph>
+      {isOpen && (
+        <div className={`position-relative${className}`}>
           <div
-            className={`dr-expandable-tab-container_icon`}
-            onClick={() => setIsOpenTimeStamp(false)}
+            className={`dr-expandable-tab-container_open py-1 ps-2 pe-6 d-flex align-items-center justify-content-center ${className} `}
+          >
+            {React.cloneElement(children[1])}
+          </div>
+          <div
+            className={`dr-expandable-tab-container_icon position-absolute d-flex align-items-center justify-content-center ${className} `}
+            onClick={() => setIsOpen(false)}
           >
             <Icon name='remove' {...iconProps} />
           </div>

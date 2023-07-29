@@ -2784,6 +2784,9 @@ fieldset:disabled .btn {
 }
 
 /* COLORING */
+.color-font {
+  color: var(--dr-font-color) !important;
+}
 .color-primary {
   color: var(--dr-primary) !important;
 }
