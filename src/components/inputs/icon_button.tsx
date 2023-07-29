@@ -2,12 +2,12 @@ import { IconButton as MIconButton } from "@mui/material";
 import "./icon_button.css";
 
 interface TButton {
-  primary?: boolean;
   secondary?: boolean;
+  primary?: boolean;
   danger?: boolean;
 }
 export const IconButton: React.FC<
-  React.ComponentProps<typeof MIconButton> & TButton
+  Omit<React.ComponentProps<typeof MIconButton>, "size" | "variant"> & TButton
 > = (props: any) => {
   const { primary, secondary, danger, ...rest } = props;
   if (primary)

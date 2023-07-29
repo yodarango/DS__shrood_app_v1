@@ -147,6 +147,19 @@
   --dr-btn-font-family: var(--dr-font-sans-serif);
   --dr-btn-font-size: 1.6rem;
   --dr-btn-font-weight: 400;
+
+  /*  shadows */
+  --dr-box-shadow-inset: inset 0 1px 0.2rem var(--dr-color-shadow);
+  --dr-box-shadow-sm: 0.125rem 0.125rem 0.5rem var(--dr-color-shadow);
+  --dr-box-shadow-lg: 1rem 1rem 3rem var(--dr-color-shadow);
+  --dr-box-shadow: 0.25rem 0.25rem 0.75rem var(--dr-color-shadow);
+
+  --dr-box-shadow--light: 0.25rem 0.25rem 0.75rem var(--dr-color-shadow--light);
+  --dr-box-shadow-lg--light: 1rem 1rem 3rem var(--dr-color-shadow--light);
+  --dr-box-shadow-sm--light: 0.125rem 0.125rem 0.5rem
+    var(--dr-color-shadow--light);
+  --dr-box-shadow-inset--light: inset 0 1px 0.25rem
+    var(--dr-color-shadow--light);
 }
 
 :root,
@@ -182,16 +195,6 @@
   --dr-danger-subtle: #f8d7da;
 
   /* shadows */
-  --dr-box-shadow-inset: inset 0 1px 2px var(--dr-color-shadow);
-  --dr-box-shadow-sm: 0 0.125rem 0.25rem var(--dr-color-shadow);
-  --dr-box-shadow-lg: 0 1rem 3rem var(--dr-color-shadow);
-  --dr-box-shadow: 0 0.5rem 1rem var(--dr-color-shadow);
-
-  --dr-box-shadow-sm--light: 0 0.125rem 0.25rem var(--dr-color-shadow--light);
-  --dr-box-shadow-inset--light: inset 0 1px 2px var(--dr-color-shadow--light);
-  --dr-box-shadow-lg--light: 0 1rem 3rem var(--dr-color-shadow--light);
-  --dr-box-shadow--light: 0 0.5rem 1rem var(--dr-color-shadow--light);
-
   --dr-shadow-tertiary: 0 0.5rem 1rem var(--dr-tertiary);
 }
 
@@ -220,10 +223,5 @@
   --dr-warning-subtle: #fff3cd;
   --dr-danger: #ff4d62;
   --dr-danger-subtle: #f8d7da;
-
-  /* shadows */
-  --dr-box-shadow: 0 0.5rem 1rem var(--shadow-color);
-  --dr-box-shadow-sm: 0 0.125rem 0.25rem var(--shadow-color);
-  --dr-box-shadow-lg: 0 1rem 3rem var(--shadow-color);
-  --dr-box-shadow-inset: inset 0 1px 2px var(--shadow-color);
+  --dr-shadow-color: #000;
 }

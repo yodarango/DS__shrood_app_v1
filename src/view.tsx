@@ -203,26 +203,24 @@ function App() {
       </ExpandableTag>
       <Card width={350}>
         <CardImage alt='my image' src={image} height={200} />
-        <CardOptions icon='ellipsisH'>
-          <MenuSlideUpItem icon={"trash"} value={1} onClick={() => {}}>
+        <CardOptions icon='ellipsisH' secondary>
+          <MenuSlideUpItem icon={"trash"} value={1} onClick={() => {}} danger>
             My label with icon string
           </MenuSlideUpItem>
         </CardOptions>
         <CardActionsLeft>
-          <IconButton className='p-0'>
-            <Icon name='heart' />
+          <IconButton className='p-0 me-2'>
+            <Icon name='heart' size={25} />
           </IconButton>
           <IconButton className='p-0'>
-            <Icon name='comment' />
+            <Icon name='comment' size={25} />
           </IconButton>
         </CardActionsLeft>
         <CardActionsRight>
-          <IconButton>
-            <ExpandableTag className='shadow'>
-              <Paragraph className='color-font'>12/12/63</Paragraph>
-              <Paragraph className='color-font'>04/09/67</Paragraph>
-            </ExpandableTag>
-          </IconButton>
+          <ExpandableTag>
+            <Paragraph className='color-font'>12/12/63</Paragraph>
+            <Paragraph className='color-font'>04/09/67</Paragraph>
+          </ExpandableTag>
         </CardActionsRight>
       </Card>
       <div className='w-100 p-6'></div>

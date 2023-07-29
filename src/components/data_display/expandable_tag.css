@@ -1,7 +1,8 @@
 .dr-expandable-tab-container_closed,
 .dr-expandable-tab-container_open {
-  transition: 300ms transform ease-in;
   background-color: var(--dr-secondary);
+  transition: 300ms transform ease-in;
+  box-shadow: var(--dr-box-shadow);
   border-radius: 3rem;
   cursor: pointer;
 }

@@ -1,5 +1,5 @@
 import { Icon, MenuSlideUp } from "..";
-import { useState } from "react";
+import React, { ReactElement, useState } from "react";
 
 import "./card.css";
 
@@ -100,7 +100,7 @@ type CardOptions = {
   iconProps?: typeof Icon;
   secondary?: boolean;
   primary?: boolean;
-  error?: boolean;
+  danger?: boolean;
   children: any;
   icon: string;
 };
@@ -110,7 +110,7 @@ export const CardOptions = ({
   secondary,
   children,
   primary,
-  error,
+  danger,
   icon,
 }: CardOptions) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -121,10 +121,16 @@ export const CardOptions = ({
         onClose={() => setIsOpen(false)}
         secondary={secondary}
         primary={primary}
-        error={error}
+        danger={danger}
         open={isOpen}
       >
-        {children}
+        {React.Children.map(children, (child: ReactElement) =>
+          React.cloneElement(child, {
+            secondary,
+            primary,
+            danger,
+          })
+        )}
       </MenuSlideUp>
     </div>
   );

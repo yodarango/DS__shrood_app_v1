@@ -5,14 +5,14 @@ type TIcons = {
   strokeWidth?: string;
   className?: string;
   color?: string;
-  size?: string;
+  size?: number;
   name: string;
 };
 
 export const Icon = ({
   color = FONT_COLOR,
   className = "",
-  size = "3rem",
+  size = 30,
   strokeWidth,
   name,
 }: TIcons) => {
@@ -1528,7 +1528,7 @@ export const Icon = ({
 
   return (
     <div
-      style={{ width: size, height: size }}
+      style={{ width: `${size * 0.1}rem`, height: `${size * 0.1}rem` }}
       className={`d-flex align-items-center justify-content-center ${className}`}
     >
       {icon}

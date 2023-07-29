@@ -22,7 +22,6 @@ type TPrimaryMenuBkgProps = {
   className?: string;
   primary?: boolean;
   danger?: boolean;
-  error?: boolean;
   title?: string;
   open?: boolean;
   children: any;
