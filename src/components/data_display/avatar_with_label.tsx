@@ -1,14 +1,15 @@
 import { Avatar } from "../data_display/avatar";
 import { Paragraph } from "./paragraph";
+import "./avatar_with_label.css";
 import React from "react";
 
-interface IAvatarWithLabel {
+export interface IAvatarWithLabel {
   label: string | React.ReactNode | JSX.Element;
   align?: "start" | "end" | "bottom" | "top";
   fontSize?: number;
 }
 export const AvatarWithLabel: React.FC<
-  React.ComponentProps<typeof Avatar> & IAvatarWithLabel
+  Omit<React.ComponentProps<typeof Avatar>, "variant"> & IAvatarWithLabel
 > = (props: any) => {
   const { label, align, fontSize, ...rest } = props;
 
@@ -31,9 +32,15 @@ export const AvatarWithLabel: React.FC<
       break;
   }
   return (
-    <div className={`d-flex ${alignment}`}>
-      <Avatar {...rest} />
-      <div className={margin}>
+    <div className={`dr-avatar-with-label d-flex ${alignment}`}>
+      <div className='dr-avatar-with-label_avatar'>
+        <Avatar {...rest} />
+      </div>
+
+      <div
+        className={`${margin} dr-avatar-with-label_label`}
+        onClick={props?.onClick}
+      >
         {(typeof label === "string" || typeof label === "number") && (
           <Paragraph fontSize={fontSize} lineHeight={0.8}>
             {label}

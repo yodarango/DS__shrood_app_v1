@@ -1,13 +1,13 @@
 import { Button as MButton } from "@mui/material";
 import "./button.css";
 
-interface TButton {
-  primary?: boolean;
+export interface TButton {
   secondary?: boolean;
+  primary?: boolean;
   danger?: boolean;
 }
 export const Button: React.FC<
-  React.ComponentProps<typeof MButton> & TButton
+  Omit<React.ComponentProps<typeof MButton>, "color"> & TButton
 > = (props: any) => {
   const { primary, secondary, danger, ...rest } = props;
 

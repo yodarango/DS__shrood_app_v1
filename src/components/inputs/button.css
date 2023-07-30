@@ -4,6 +4,9 @@
   text-transform: none !important;
   border-radius: 5em !important;
 }
+.MuiButton-text {
+  color: inherit !important;
+}
 
 .MuiButton-containedPrimary {
   background-image: linear-gradient(

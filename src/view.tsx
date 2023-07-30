@@ -21,9 +21,12 @@ import {
   CardImage,
   CardActionsLeft,
   CardActionsRight,
+  ContentFeedback,
+  CardContent,
 } from "./components";
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
+import { CardContentMeta } from "./components/layout/card";
 
 function App() {
   return (
@@ -202,6 +205,13 @@ function App() {
         <Paragraph>Hide data </Paragraph>
       </ExpandableTag>
       <Card width={350}>
+        <AvatarWithLabel
+          sx={{ width: 30, height: 30 }}
+          label='username'
+          fontSize={10}
+          src={image}
+          secondary
+        />
         <CardImage alt='my image' src={image} height={200} />
         <CardOptions icon='ellipsisH' secondary>
           <MenuSlideUpItem icon={"trash"} value={1} onClick={() => {}} danger>
@@ -223,6 +233,33 @@ function App() {
           </ExpandableTag>
         </CardActionsRight>
       </Card>
+
+      <ContentFeedback width={400}>
+        <AvatarWithLabel
+          sx={{ width: 30, height: 30 }}
+          label='username'
+          fontSize={14}
+          src={image}
+          secondary
+        />
+        <CardContentMeta>
+          <ExpandableTag>
+            <Paragraph>display Data</Paragraph>
+            <Paragraph>Hide data </Paragraph>
+          </ExpandableTag>
+        </CardContentMeta>
+        <CardOptions icon='ellipsisH' secondary>
+          <MenuSlideUpItem icon={"trash"} value={1} onClick={() => {}} danger>
+            My label with icon string
+          </MenuSlideUpItem>
+        </CardOptions>
+        <CardContent>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, ea
+          enim iure tempore magni doloribus saepe, officia blanditiis, molestias
+          doloremque reprehenderit veniam consequuntur quia dolor sint
+          perspiciatis. Maxime, veritatis ea?
+        </CardContent>
+      </ContentFeedback>
       <div className='w-100 p-6'></div>
     </main>
   );

@@ -1,7 +1,10 @@
-import { Icon, MenuSlideUp } from "..";
+import { AvatarWithLabel, Button, Icon, MenuSlideUp, Paragraph } from "..";
 import React, { ReactElement, useState } from "react";
 
 import "./card.css";
+import { IAvatarWithLabel } from "../data_display/avatar_with_label";
+import { TButton } from "../inputs/button";
+import { COLOR_TERTIARY } from "../../assets/tokens";
 
 type TCard = {
   height?: number;
@@ -9,10 +12,9 @@ type TCard = {
   children: any;
 };
 export const Card = ({ height, width, children }: TCard) => {
-  console.log(children);
   const headerChildren: JSX.Element[] = children.filter(
     (child: JSX.Element) =>
-      child.type.name === "CardOptions" || child.type.name === "CardAvatar"
+      child.type.name === "CardOptions" || child.type.name === "AvatarWithLabel"
   );
 
   const footerChildren: JSX.Element[] = children.filter(
@@ -35,7 +37,7 @@ export const Card = ({ height, width, children }: TCard) => {
         }`}
       >
         {children.find(
-          (child: JSX.Element) => child.type.name === "CardAvatar"
+          (child: JSX.Element) => child.type.name === "AvatarWithLabel"
         )}
 
         {children.find(
@@ -151,8 +153,57 @@ export const CardActionsRight = ({ children }: TCardActionsRight) => {
 };
 
 type TCardContent = {
+  expanderProps?:
+    | (typeof Button & TButton & { color?: string })
+    | (TButton & { color?: string });
+  includeShowMore?: boolean;
+  maxCount?: number;
   children: any;
 };
-export const CardContent = ({ children }: TCardContent) => {
+export const CardContent = ({
+  includeShowMore = true,
+  expanderProps = { color: COLOR_TERTIARY },
+  maxCount = 100,
+  children,
+}: TCardContent) => {
+  const [isOpen, setIsOpen] = useState(false);
+  let { primary, secondary, danger, color, ...rest } = expanderProps;
+
+  console.log(primary);
+  if (typeof children === "string")
+    return (
+      <div>
+        <Paragraph>
+          {!isOpen ? `${children.slice(0, maxCount)}...` : children}
+        </Paragraph>
+        {includeShowMore && (
+          <div
+            style={{ color }}
+            className='dr-card-image-04rq_expander-container'
+          >
+            <Button
+              className='dr-card-image-04rq_expander btn btn-link p-0 m-0'
+              onClick={() => setIsOpen(!isOpen)}
+              secondary={secondary}
+              primary={primary}
+              danger={danger}
+              variant='text'
+              {...rest}
+            >
+              See more
+            </Button>
+          </div>
+        )}
+      </div>
+    );
+
+  if (typeof children === "object" && children?.props?.children)
+    return <div>{children}</div>;
+};
+
+type TCardContentMeta = {
+  children: any;
+};
+export const CardContentMeta = ({ children }: TCardContentMeta) => {
   return <div>{children}</div>;
 };

@@ -6,3 +6,5 @@ export {
   CardImage,
   Card,
 } from "./card";
+
+export { ContentFeedback } from "./content_feedback";

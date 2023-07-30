@@ -4,8 +4,8 @@ import "./close_button.css";
 type TCloseContentProps = {
   onClick?: () => void;
   className?: string;
-  size?: string;
   color?: string;
+  size?: number;
 };
 
 export const CloseButton = (props: TCloseContentProps) => {

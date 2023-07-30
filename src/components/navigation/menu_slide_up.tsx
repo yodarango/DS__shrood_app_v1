@@ -84,7 +84,7 @@ export const MenuSlideUp = ({
             style={{ background: bkgColor }}
           >
             <div className='dr-menu-slideup-container_close'>
-              <CloseButton onClick={handleClose} size='2.5rem' />
+              <CloseButton onClick={handleClose} size={25} />
             </div>
             {typeof title === "string" && (
               <div className='mb-2'>
@@ -148,13 +148,11 @@ export const MenuSlideUpItem = ({
   const shadowClass = secondary ? "shadow-box-tertiary" : "shadow-light";
 
   return (
-    <div
-      className={`dr-menuslideup-option-container mb-2 ${className}`}
-      onClick={() => onClick(value)}
-    >
-      <div className='d-flex align-items-center justify-content-center'>
+    <div className={`dr-menuslideup-option-container mb-2 ${className}`}>
+      <div className='d-flex align-items-center justify-content-start'>
         <div
           className={`ms-1 me-2 shrink-0 dr-menuslideup-option-container_icon ${shadowClass}`}
+          onClick={() => onClick(value)}
         >
           {typeof icon === "string" && (
             <IconButton
@@ -170,8 +168,13 @@ export const MenuSlideUpItem = ({
             typeof icon !== "string" &&
             React.cloneElement(icon, { secondary, primary, danger })}
         </div>
-        <div className='w-100 dr-menuslideup-option_label py-2 px-0'>
-          {children}
+        <div>
+          <div
+            className='dr-menuslideup-option_label py-2 px-0 d-inline-block'
+            onClick={() => onClick(value)}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </div>
