@@ -190,7 +190,7 @@ export const CardContent = ({
               variant='text'
               {...rest}
             >
-              See more
+              {!isOpen ? "See more" : "See less"}
             </Button>
           </div>
         )}

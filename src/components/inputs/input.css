@@ -1,0 +1,31 @@
+.MuiTextField-root > div > input {
+  background-color: var(--dr-secondary);
+  border-radius: 3em;
+  border: 1px solid var(--dr-tertiary);
+  color: var(--dr-font-color);
+  font-family: var(--dr-body-font-family);
+  font-size: var(--dr-body-font-size);
+  outline: none;
+}
+
+.MuiInputBase-multiline {
+  border: 1px solid var(--dr-tertiary);
+  background-color: var(--dr-secondary);
+  border-radius: 3em;
+  outline: none;
+}
+
+.MuiInputBase-multiline textarea {
+  color: var(--dr-font-color);
+  font-family: var(--dr-body-font-family);
+  font-size: var(--dr-body-font-size);
+  outline: none;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  display: none;
+}
+
+.MuiTextField-root > div {
+  border-radius: 3em;
+}

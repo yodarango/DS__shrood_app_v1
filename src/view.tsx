@@ -23,6 +23,7 @@ import {
   CardActionsRight,
   ContentFeedback,
   CardContent,
+  Input,
 } from "./components";
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
@@ -260,6 +261,13 @@ function App() {
           perspiciatis. Maxime, veritatis ea?
         </CardContent>
       </ContentFeedback>
+      <Input placeholder='normal' className='d-block mt-3' />
+      <Input
+        placeholder='multiline'
+        multiline
+        maxRows={4}
+        className='d-block mt-3'
+      />
       <div className='w-100 p-6'></div>
     </main>
   );

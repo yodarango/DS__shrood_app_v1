@@ -6,6 +6,7 @@ export interface TButton {
   primary?: boolean;
   danger?: boolean;
 }
+
 export const Button: React.FC<
   Omit<React.ComponentProps<typeof MButton>, "color"> & TButton
 > = (props: any) => {
