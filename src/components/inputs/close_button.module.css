@@ -1,4 +1,4 @@
-.dr-close-content-icon:hover div {
+.drCloseContentIcon:hover div {
   cursor: pointer;
   transform: scale(1.1);
 }

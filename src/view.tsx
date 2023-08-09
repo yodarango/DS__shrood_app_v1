@@ -24,6 +24,7 @@ import {
   ContentFeedback,
   CardContent,
   Input,
+  SectionalButton,
 } from "./components";
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
@@ -267,6 +268,12 @@ function App() {
         multiline
         maxRows={4}
         className='d-block mt-3'
+      />
+      <SectionalButton
+        label={"label"}
+        value={"value"}
+        iconProps={{ strokeWidth: "64" }}
+        className='mt-3'
       />
       <div className='w-100 p-6'></div>
     </main>

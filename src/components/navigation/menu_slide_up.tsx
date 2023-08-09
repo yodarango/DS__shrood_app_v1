@@ -10,7 +10,7 @@ import {
   COLOR_SENARY,
 } from "../../assets/tokens";
 
-import "./menu_slide_up.css";
+import styles from "./menu_slide_up.module.css";
 
 type TPrimaryMenuBkgProps = {
   icon?: string | JSX.Element | React.ReactNode;
@@ -48,7 +48,7 @@ export const MenuSlideUp = ({
 
   if (secondary) {
     bkgColor = `${COLOR_SECONDARY}`;
-    menuVariantClassNames = "dr-menu-slideup-container_secondary";
+    menuVariantClassNames = styles.drMenuSlideupContainerSecondary;
   } else if (danger)
     bkgColor = `linear-gradient(-10deg, ${COLOR_SEPTENARY},  ${COLOR_SENARY})`;
   else if (customColors && customColors.length > 1)
@@ -80,10 +80,10 @@ export const MenuSlideUp = ({
       <Portal portalId='portal'>
         {isOpen && (
           <div
-            className={`dr-menu-slideup-container ${className} ${menuVariantClassNames}`}
+            className={`${styles.drMenuSlideupContainer} ${className} ${menuVariantClassNames}`}
             style={{ background: bkgColor }}
           >
-            <div className='dr-menu-slideup-container_close'>
+            <div className={`${styles.drMenuSlideupContainerClose}`}>
               <CloseButton onClick={handleClose} size={25} />
             </div>
             {typeof title === "string" && (
@@ -92,7 +92,7 @@ export const MenuSlideUp = ({
               </div>
             )}
             {typeof title !== "string" && title}
-            <div className='dr-menut-slidup-container_content'>
+            <div className={`${styles.drMenutSlidupContainerContent}`}>
               {childrenWithProps}
             </div>
           </div>
@@ -100,7 +100,7 @@ export const MenuSlideUp = ({
       </Portal>
 
       {typeof icon === "string" && (
-        <div className='dr-menu-slideup-container-fg34'>
+        <div className={`${styles.drMenuSlideupContainerfg34}`}>
           <IconButton
             {...iconProps}
             {...iconVariants}
@@ -112,7 +112,7 @@ export const MenuSlideUp = ({
       )}
       {typeof icon !== "string" && (
         <div
-          className='dr-menu-slideup-container-fg34'
+          className={`${styles.drMenuSlideupContainerfg34}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           {icon}
@@ -151,7 +151,7 @@ export const MenuSlideUpItem = ({
     <div className={`dr-menuslideup-option-container mb-2 ${className}`}>
       <div className='d-flex align-items-center justify-content-start'>
         <div
-          className={`ms-1 me-2 shrink-0 dr-menuslideup-option-container_icon ${shadowClass}`}
+          className={`ms-1 me-2 shrink-0 ${styles.drMenuslideupOptionContainerIcon} ${shadowClass}`}
           onClick={() => onClick(value)}
         >
           {typeof icon === "string" && (
@@ -170,7 +170,7 @@ export const MenuSlideUpItem = ({
         </div>
         <div>
           <div
-            className='dr-menuslideup-option_label py-2 px-0 d-inline-block'
+            className={`${styles.drMenuslideupOptionLabel} py-2 px-0 d-inline-block`}
             onClick={() => onClick(value)}
           >
             {children}

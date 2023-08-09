@@ -169,7 +169,6 @@ export const CardContent = ({
   const [isOpen, setIsOpen] = useState(false);
   let { primary, secondary, danger, color, ...rest } = expanderProps;
 
-  console.log(primary);
   if (typeof children === "string")
     return (
       <div>

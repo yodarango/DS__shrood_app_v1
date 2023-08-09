@@ -1,5 +1,5 @@
-.dr-expandable-tab-container_closed,
-.dr-expandable-tab-container_open {
+.drExpandableTabContainerClosed,
+.drExpandableTabContainerOpen {
   background-color: var(--dr-secondary);
   transition: 300ms transform ease-in;
   box-shadow: var(--dr-box-shadow);
@@ -7,7 +7,7 @@
   cursor: pointer;
 }
 
-.dr-expandable-tab-container_icon {
+.drExpandableTabContainerIcon {
   background-color: inherit;
 }
 
@@ -20,7 +20,7 @@
   position: relative;
 }
 
-.dr-expandable-tab-container_icon {
+.drExpandableTabContainerIcon {
   transition: 300ms transform ease-in;
   background-color: var(--dr-secondary);
   border-radius: 50%;

@@ -1,7 +1,7 @@
 import { FONT_COLOR } from "../../assets/tokens";
 import "./icon.css";
 
-type TIcons = {
+export type TIcons = {
   strokeWidth?: string;
   className?: string;
   color?: string;

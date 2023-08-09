@@ -1,4 +1,4 @@
-import "./content_feedback.css";
+import styles from "./content_feedback.module.css";
 
 type TContentFeedback = {
   className?: string;
@@ -24,11 +24,13 @@ export const ContentFeedback = ({
   );
   return (
     <div
-      className={`dr-content-feedback-24ck p-2 ${className}`}
+      className={`${styles.drContentFeedback24ck} p-2 ${className}`}
       style={{ height, width, ...style }}
     >
       <div
-        className={`dr-content-feedback-24ck_header pb-2 d-flex align-items-center ${
+        className={`${
+          styles.drContentFeedback24ckHeader
+        } pb-2 d-flex align-items-center ${
           headerChildren.length > 1
             ? "justify-content-between"
             : "justify-content-start"

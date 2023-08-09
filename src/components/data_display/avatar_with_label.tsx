@@ -1,7 +1,8 @@
 import { Avatar } from "../data_display/avatar";
 import { Paragraph } from "./paragraph";
-import "./avatar_with_label.css";
 import React from "react";
+
+import styles from "./avatar_with_label.module.css";
 
 export interface IAvatarWithLabel {
   label: string | React.ReactNode | JSX.Element;
@@ -32,13 +33,13 @@ export const AvatarWithLabel: React.FC<
       break;
   }
   return (
-    <div className={`dr-avatar-with-label d-flex ${alignment}`}>
-      <div className='dr-avatar-with-label_avatar'>
+    <div className={`${styles.drAvatarWithLabel} d-flex ${alignment}`}>
+      <div className={`${styles.drAvatarWithLabelAvatar}`}>
         <Avatar {...rest} />
       </div>
 
       <div
-        className={`${margin} dr-avatar-with-label_label`}
+        className={`${margin} ${styles.drAvatarWithLabelLabel}`}
         onClick={props?.onClick}
       >
         {(typeof label === "string" || typeof label === "number") && (
