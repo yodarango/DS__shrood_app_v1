@@ -25,6 +25,8 @@ import {
   CardContent,
   Input,
   SectionalButton,
+  PieChart,
+  SimpleChip,
 } from "./components";
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
@@ -275,6 +277,8 @@ function App() {
         iconProps={{ strokeWidth: "64" }}
         className='mt-3'
       />
+      <PieChart dataSlices={[]} dataSlicesColors={[]} />
+      <SimpleChip>This is my simple chip</SimpleChip>
       <div className='w-100 p-6'></div>
     </main>
   );

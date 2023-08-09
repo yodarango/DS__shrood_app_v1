@@ -1,0 +1,12 @@
+.simpleChip09jk {
+  border-radius: 1.2em;
+  background-color: var(--dr-secondary);
+}
+
+.simpleChip09jkContent p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

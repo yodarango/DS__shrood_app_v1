@@ -8,7 +8,7 @@ type TSectionalButton = {
   icon?: string | React.ReactNode | JSX.Element | typeof Icon;
   className?: string;
   iconProps?: Omit<TIcons, "name">;
-  style?: object;
+  style?: React.CSSProperties;
   href?: string;
   label: any;
   value: any;

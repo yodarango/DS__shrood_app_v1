@@ -4,7 +4,7 @@ type TContentFeedback = {
   className?: string;
   height?: number;
   width?: number;
-  style?: object;
+  style?: React.CSSProperties;
   children: any;
 };
 export const ContentFeedback = ({

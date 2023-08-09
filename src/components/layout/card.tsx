@@ -76,7 +76,7 @@ type CardImage = {
   className?: string;
   height?: number;
   width?: number;
-  style?: object;
+  style?: React.CSSProperties;
   src: string;
   alt: string;
 };

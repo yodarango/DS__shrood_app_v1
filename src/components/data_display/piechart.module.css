@@ -1,0 +1,32 @@
+.piechart34as {
+  width: 10.4rem;
+  height: 10.4rem;
+  overflow: hidden;
+}
+
+.piechart34as canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  transform: scale(2.2);
+  z-index: 1;
+}
+
+.piechart34asHole {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  z-index: 2;
+  background-color: var(--dr-primary);
+  border-radius: 50%;
+}
