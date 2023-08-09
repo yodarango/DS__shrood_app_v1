@@ -1,10 +1,9 @@
-import { AvatarWithLabel, Button, Icon, MenuSlideUp, Paragraph } from "..";
+import { Button, Icon, MenuSlideUp, Paragraph } from "..";
 import React, { ReactElement, useState } from "react";
+import { COLOR_TERTIARY } from "../../assets/tokens";
+import { TButton } from "../inputs/button";
 
 import "./card.css";
-import { IAvatarWithLabel } from "../data_display/avatar_with_label";
-import { TButton } from "../inputs/button";
-import { COLOR_TERTIARY } from "../../assets/tokens";
 
 type TCard = {
   height?: number;

@@ -27,10 +27,12 @@ import {
   SectionalButton,
   PieChart,
   SimpleChip,
+  Radio,
 } from "./components";
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
 import { CardContentMeta } from "./components/layout/card";
+import { RadioGroup } from "@mui/material";
 
 function App() {
   return (
@@ -279,6 +281,23 @@ function App() {
       />
       <PieChart dataSlices={[]} dataSlicesColors={[]} />
       <SimpleChip>This is my simple chip</SimpleChip>
+      <Radio label='I am just a radio' icon='trash' value={1} />
+      <RadioGroup>
+        <Radio
+          label='align start'
+          icon='trash'
+          value={1}
+          labelPlacement='start'
+        />
+        <Radio label='align end' icon='trash' value={1} labelPlacement='end' />
+        <Radio label='align top' icon='trash' value={1} labelPlacement='top' />
+        <Radio
+          label='align bottom'
+          icon='trash'
+          value={1}
+          labelPlacement='bottom'
+        />
+      </RadioGroup>
       <div className='w-100 p-6'></div>
     </main>
   );

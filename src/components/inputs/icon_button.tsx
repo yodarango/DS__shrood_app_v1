@@ -1,14 +1,17 @@
 import { IconButton as MIconButton } from "@mui/material";
 import "./icon_button.css";
 
-interface TButton {
+export interface IIconButtonCustom {
   secondary?: boolean;
   primary?: boolean;
   danger?: boolean;
 }
-export const IconButton: React.FC<
-  Omit<React.ComponentProps<typeof MIconButton>, "size" | "variant"> & TButton
-> = (props: any) => {
+export type IIConButton = React.FC<
+  Omit<React.ComponentProps<typeof MIconButton>, "size" | "variant"> &
+    IIconButtonCustom
+>;
+
+export const IconButton: IIConButton = (props: any) => {
   const { primary, secondary, danger, ...rest } = props;
   if (primary)
     return <MIconButton {...rest} variant='contained' color='primary' />;
