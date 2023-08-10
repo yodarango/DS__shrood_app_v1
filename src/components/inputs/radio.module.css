@@ -1,5 +1,21 @@
-.radio56sm {
+.radioGroup56sm {
   display: flex;
+  gap: var(--dr-spacing-2);
+}
+
+.radioGroup56sm.horizontal {
+  flex-direction: row;
   align-items: center;
   justify-content: start;
+}
+
+.radioGroup56sm.vertical {
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.selectedBorder.selected {
+  border-radius: 1.1em;
+  border-width: 2px !important;
 }

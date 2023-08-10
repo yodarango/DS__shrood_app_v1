@@ -12,15 +12,22 @@ export type IIConButton = React.FC<
 >;
 
 export const IconButton: IIConButton = (props: any) => {
-  const { primary, secondary, danger, ...rest } = props;
+  const { primary, secondary, danger, sx, ...rest } = props;
+  const btnSize = sx || { width: 40, height: 40 };
   if (primary)
-    return <MIconButton {...rest} variant='contained' color='primary' />;
+    return (
+      <MIconButton sx={btnSize} {...rest} variant='contained' color='primary' />
+    );
 
   if (secondary)
-    return <MIconButton {...rest} variant='outlined' color='primary' />;
+    return (
+      <MIconButton sx={btnSize} {...rest} variant='outlined' color='primary' />
+    );
 
   if (danger)
-    return <MIconButton {...rest} variant='contained' color='error' />;
+    return (
+      <MIconButton sx={btnSize} {...rest} variant='contained' color='error' />
+    );
 
-  return <MIconButton {...rest} />;
+  return <MIconButton sx={btnSize} {...rest} />;
 };

@@ -28,11 +28,11 @@ import {
   PieChart,
   SimpleChip,
   Radio,
+  RadioGroup,
 } from "./components";
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
 import { CardContentMeta } from "./components/layout/card";
-import { RadioGroup } from "@mui/material";
 
 function App() {
   return (
@@ -286,15 +286,15 @@ function App() {
         <Radio
           label='align start'
           icon='trash'
-          value={1}
+          value={0}
           labelPlacement='start'
         />
         <Radio label='align end' icon='trash' value={1} labelPlacement='end' />
-        <Radio label='align top' icon='trash' value={1} labelPlacement='top' />
+        <Radio label='align top' icon='trash' value={2} labelPlacement='top' />
         <Radio
           label='align bottom'
           icon='trash'
-          value={1}
+          value={3}
           labelPlacement='bottom'
         />
       </RadioGroup>
