@@ -29,6 +29,7 @@ import {
   SimpleChip,
   Radio,
   RadioGroup,
+  ButtonGroup,
 } from "./components";
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
@@ -298,6 +299,11 @@ function App() {
           labelPlacement='bottom'
         />
       </RadioGroup>
+      <ButtonGroup>
+        <Button>Button 1</Button>
+        <Button>Button 1</Button>
+        <Button>Button 2</Button>
+      </ButtonGroup>
       <div className='w-100 p-6'></div>
     </main>
   );

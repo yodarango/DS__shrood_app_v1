@@ -1,21 +1,29 @@
 import { Button as MButton } from "@mui/material";
 import "./button.css";
 
-export interface TButton {
+export interface IButton {
   secondary?: boolean;
   primary?: boolean;
   danger?: boolean;
 }
+export type TExtendedButton = React.FC<
+  Omit<React.ComponentProps<typeof MButton>, "color"> & IButton
+>;
 
-export const Button: React.FC<
-  Omit<React.ComponentProps<typeof MButton>, "color"> & TButton
-> = (props: any) => {
-  const { primary, secondary, danger, ...rest } = props;
+export const Button: TExtendedButton = (props: any) => {
+  const { className, primary, secondary, danger, ...rest } = props;
 
   if (primary) return <MButton {...rest} variant='contained' color='primary' />;
 
   if (secondary)
-    return <MButton {...rest} variant='outlined' color='primary' />;
+    return (
+      <MButton
+        className={`${className || ""} dr-secondary`}
+        variant='outlined'
+        color='primary'
+        {...rest}
+      />
+    );
 
   if (danger) return <MButton {...rest} variant='contained' color='error' />;
 

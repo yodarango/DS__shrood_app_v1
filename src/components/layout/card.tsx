@@ -1,7 +1,7 @@
 import { Button, Icon, MenuSlideUp, Paragraph } from "..";
 import React, { ReactElement, useState } from "react";
 import { COLOR_TERTIARY } from "../../assets/tokens";
-import { TButton } from "../inputs/button";
+import { IButton } from "../inputs/button";
 
 import "./card.css";
 
@@ -153,8 +153,8 @@ export const CardActionsRight = ({ children }: TCardActionsRight) => {
 
 type TCardContent = {
   expanderProps?:
-    | (typeof Button & TButton & { color?: string })
-    | (TButton & { color?: string });
+    | (typeof Button & IButton & { color?: string })
+    | (IButton & { color?: string });
   includeShowMore?: boolean;
   maxCount?: number;
   children: any;

@@ -17,7 +17,7 @@
   color: var(--font-color) !important;
 }
 
-.MuiButton-outlinedPrimary {
+.MuiButton-outlinedPrimary.dr-secondary {
   color: var(--dr-tertiary) !important;
   border-color: var(--dr-tertiary) !important;
 }
