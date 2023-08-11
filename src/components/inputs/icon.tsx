@@ -1,9 +1,12 @@
-import { FONT_COLOR } from "../../assets/tokens";
+import { COLOR_TERTIARY, COLOR_SENARY, FONT_COLOR } from "../../assets/tokens";
 import "./icon.css";
 
 export type TIcons = {
   strokeWidth?: string;
+  secondary?: boolean;
   className?: string;
+  primary?: boolean;
+  danger?: boolean;
   color?: string;
   size?: number;
   name: string;
@@ -12,11 +15,18 @@ export type TIcons = {
 export const Icon = ({
   color = FONT_COLOR,
   className = "",
-  size = 30,
   strokeWidth,
+  secondary,
+  primary,
+  danger,
+  size = 30,
   name,
 }: TIcons) => {
   let icon: any;
+
+  if (primary) color = FONT_COLOR;
+  if (secondary) color = COLOR_TERTIARY;
+  if (danger) color = COLOR_SENARY;
 
   switch (name) {
     case "add":

@@ -311,9 +311,13 @@ function App() {
           <Icon name='sparkles' />
           option
         </ListItem>
+        <ListItem primary selected>
+          <Icon name='sparkles' />
+          option
+        </ListItem>
       </Drawer>
       <Drawer trigger={<Button secondary>Open Secondary</Button>} secondary>
-        <ListItem>option</ListItem>
+        <ListItem selected>option</ListItem>
         <ListItem primary>override the secondary styles</ListItem>
         <ListItem className='color-tertiary'>
           override the secondary styles again

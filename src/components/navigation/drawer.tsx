@@ -1,7 +1,17 @@
-import { Box, Drawer as MDrawer, ListItem as MListItem } from "@mui/material";
+import {
+  Box,
+  Drawer as MDrawer,
+  ListItemButton as MListItemButton,
+} from "@mui/material";
 import React, { useState } from "react";
 
 import "./drawer.css";
+import { TIcons } from "../inputs/icon";
+import {
+  COLOR_QUATERNARY,
+  COLOR_TERTIARY,
+  COLOR_SENARY,
+} from "../../assets/tokens";
 
 interface IDrawer {
   trigger: React.ReactNode | readonly React.ReactNode[];
@@ -18,12 +28,12 @@ export const Drawer: React.FC<
 > = (props: any) => {
   let {
     anchor = "left",
+    width = "30rem",
     className = "",
     secondary,
     children,
     primary,
     trigger,
-    width = "30rem",
     ...rest
   } = props;
   const [isOpen, setIsOpen] = useState(false);
@@ -74,23 +84,39 @@ interface IDrawerItem {
 }
 
 export const ListItem: React.FC<
-  Omit<React.ComponentProps<typeof MListItem>, "color"> & IDrawerItem
+  Omit<React.ComponentProps<typeof MListItemButton>, "color"> & IDrawerItem
 > = (props: any) => {
-  const { primary, secondary, danger, children, ...rest } = props;
+  const { className, primary, secondary, danger, children, ...rest } = props;
 
   let variantClass = "";
-  if (secondary) variantClass = "secondary";
-  if (primary) variantClass = "primary";
-  if (danger) variantClass = "danger";
+  let iconColor: string | undefined = undefined;
+  if (secondary) {
+    variantClass = "secondary";
+    iconColor = COLOR_TERTIARY;
+  }
+  if (primary) {
+    variantClass = "primary";
+    iconColor = COLOR_QUATERNARY;
+  }
+  if (danger) {
+    variantClass = "danger";
+    iconColor = COLOR_SENARY;
+  }
 
   return (
-    <MListItem
+    <MListItemButton
       className={`p-3 mb-2 drawer-list-item drawer-list-item-${variantClass} ${
-        props.className || ""
+        className || ""
       } `}
       {...rest}
     >
-      {children}
-    </MListItem>
+      {React.Children.map(children, (child) => {
+        if (React.isValidElement<TIcons>(child)) {
+          return React.cloneElement(child, { color: iconColor });
+        }
+
+        return child;
+      })}
+    </MListItemButton>
   );
 };

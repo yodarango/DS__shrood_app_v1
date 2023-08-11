@@ -1,22 +1,31 @@
 .dr-drawer-primary .MuiPaper-root {
   background-color: var(--dr-primary) !important;
-  border-right: 2px solid var(--dr-tertiary) !important;
+  border-right: 2px solid var(--dr-quaternary) !important;
 }
 
 .dr-drawer-secondary .MuiPaper-root {
   background-color: var(--dr-secondary);
 }
 
-.drawer-list-item-primary {
-  color: var(--dr-quaternary) !important;
+.MuiButtonBase-root.drawer-list-item-primary {
+  color: var(--dr-quaternary);
 }
 
-.drawer-list-item-secondary {
-  color: var(--dr-font-color) !important;
+.Mui-selected.MuiButtonBase-root.drawer-list-item,
+.Mui-selected.MuiButtonBase-root.drawer-list-item:hover {
+  background-color: transparent;
 }
 
-.drawer-list-item:hover {
+.MuiButtonBase-root.drawer-list-item-secondary {
+  color: var(--dr-font-color);
+}
+.MuiButtonBase-root.drawer-list-item {
   column-gap: var(--dr-spacing-3);
+  cursor: pointer;
+}
+.MuiButtonBase-root.drawer-list-item:hover,
+.Mui-selected.MuiButtonBase-root.drawer-list-item {
+  color: var(--dr-font-color) !important;
   border-width: 1px;
   border-style: solid;
   border-color: inherit;
@@ -24,4 +33,9 @@
   border-right: 0;
   border-top: 0;
   cursor: pointer;
+}
+
+.MuiButtonBase-root.drawer-list-item:hover div *,
+.Mui-selected.MuiButtonBase-root.drawer-list-item div * {
+  stroke: var(--dr-font-color) !important;
 }
