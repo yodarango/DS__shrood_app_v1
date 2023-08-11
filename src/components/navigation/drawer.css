@@ -1,0 +1,27 @@
+.dr-drawer-primary .MuiPaper-root {
+  background-color: var(--dr-primary) !important;
+  border-right: 2px solid var(--dr-tertiary) !important;
+}
+
+.dr-drawer-secondary .MuiPaper-root {
+  background-color: var(--dr-secondary);
+}
+
+.drawer-list-item-primary {
+  color: var(--dr-quaternary) !important;
+}
+
+.drawer-list-item-secondary {
+  color: var(--dr-font-color) !important;
+}
+
+.drawer-list-item:hover {
+  column-gap: var(--dr-spacing-3);
+  border-width: 1px;
+  border-style: solid;
+  border-color: inherit;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  cursor: pointer;
+}

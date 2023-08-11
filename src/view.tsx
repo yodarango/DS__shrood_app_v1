@@ -30,6 +30,8 @@ import {
   Radio,
   RadioGroup,
   ButtonGroup,
+  Drawer,
+  ListItem,
 } from "./components";
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
@@ -301,9 +303,22 @@ function App() {
       </RadioGroup>
       <ButtonGroup>
         <Button>Button 1</Button>
-        <Button>Button 1</Button>
         <Button>Button 2</Button>
+        <Button>Button 3</Button>
       </ButtonGroup>
+      <Drawer trigger={<Button secondary>Open Primary</Button>}>
+        <ListItem primary>
+          <Icon name='sparkles' />
+          option
+        </ListItem>
+      </Drawer>
+      <Drawer trigger={<Button secondary>Open Secondary</Button>} secondary>
+        <ListItem>option</ListItem>
+        <ListItem primary>override the secondary styles</ListItem>
+        <ListItem className='color-tertiary'>
+          override the secondary styles again
+        </ListItem>
+      </Drawer>
       <div className='w-100 p-6'></div>
     </main>
   );
