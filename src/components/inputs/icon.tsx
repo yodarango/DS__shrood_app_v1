@@ -13,7 +13,7 @@ export type TIcons = {
 };
 
 export const Icon = ({
-  color = FONT_COLOR,
+  color,
   className = "",
   strokeWidth,
   secondary,
@@ -25,8 +25,9 @@ export const Icon = ({
   let icon: any;
 
   if (primary) color = FONT_COLOR;
-  if (secondary) color = COLOR_TERTIARY;
-  if (danger) color = COLOR_SENARY;
+  else if (secondary) color = COLOR_TERTIARY;
+  else if (danger) color = COLOR_SENARY;
+  else if (!danger && !primary && !secondary && !color) color = FONT_COLOR;
 
   switch (name) {
     case "add":
@@ -392,6 +393,28 @@ export const Icon = ({
       );
       break;
 
+    case "checkmarkCircle":
+      icon = (
+        <svg viewBox='0 0 512 512'>
+          <path
+            d='M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z'
+            fill='none'
+            stroke={color}
+            strokeMiterlimit='10'
+            strokeWidth={strokeWidth ? strokeWidth : "32"}
+          />
+          <path
+            fill='none'
+            stroke={color}
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            strokeWidth={strokeWidth ? strokeWidth : "32"}
+            d='M352 176L217.6 336 160 272'
+          />
+        </svg>
+      );
+      break;
+
     case "clock":
       icon = (
         <svg viewBox='0 0 512 512'>
@@ -418,6 +441,28 @@ export const Icon = ({
             strokeLinejoin='round'
             strokeWidth={strokeWidth ? strokeWidth : "32"}
             d='M368 368L144 144M368 144L144 368'
+          />
+        </svg>
+      );
+      break;
+
+    case "closeCircled":
+      icon = (
+        <svg viewBox='0 0 512 512'>
+          <path
+            d='M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z'
+            fill='none'
+            stroke={color}
+            strokeMiterlimit='10'
+            strokeWidth={strokeWidth ? strokeWidth : "32"}
+          />
+          <path
+            fill='none'
+            stroke={color}
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            strokeWidth={strokeWidth ? strokeWidth : "32"}
+            d='M320 320L192 192M192 320l128-128'
           />
         </svg>
       );
@@ -483,7 +528,7 @@ export const Icon = ({
       );
       break;
 
-    case "double_checkmark":
+    case "doubleCheckmark":
       icon = (
         <svg viewBox='0 0 512 512'>
           <path
@@ -497,6 +542,7 @@ export const Icon = ({
         </svg>
       );
       break;
+
     case "edit":
       icon = (
         <svg fill={color} viewBox='0 0 16 16'>

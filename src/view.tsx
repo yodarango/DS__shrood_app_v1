@@ -33,6 +33,7 @@ import {
   Drawer,
   ListItem,
   Modal,
+  Toast,
 } from "./components";
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
@@ -55,7 +56,6 @@ function App() {
       <IconButton danger>
         <Icon name='add' />
       </IconButton>
-
       <h1>Icon With Direction</h1>
       <ButtonWithDirection primary direction='right' color='info'>
         Primary right info
@@ -172,7 +172,6 @@ function App() {
           My label with icon jsx
         </MenuSlideUpItem>
       </MenuSlideUp>
-
       <MenuSlideUp danger>
         <MenuSlideUpItem icon={"trash"} value={1} onClick={() => {}}>
           My label with icon string
@@ -189,7 +188,6 @@ function App() {
           My label with icon jsx
         </MenuSlideUpItem>
       </MenuSlideUp>
-
       <h1>Avatars</h1>
       <Avatar src={image} primary sx={{ width: 100, height: 100 }} />
       <Avatar src={image} secondary sx={{ width: 75, height: 75 }} />
@@ -243,7 +241,6 @@ function App() {
           </ExpandableTag>
         </CardActionsRight>
       </Card>
-
       <ContentFeedback width={400}>
         <AvatarWithLabel
           sx={{ width: 30, height: 30 }}
@@ -458,6 +455,37 @@ function App() {
           ))}
         </>
       </Modal>
+      <Toast open>This is my primary message</Toast>
+      <Toast
+        open
+        danger
+        title='with title'
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+      >
+        This is my danger message
+      </Toast>
+      <Toast
+        open
+        secondary
+        anchorOrigin={{ vertical: "top", horizontal: "left" }}
+      >
+        This is my secondary message
+      </Toast>
+
+      <Toast
+        open
+        success
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+      >
+        This is my success message
+      </Toast>
+      <Toast
+        open
+        warning
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        This is my warning message
+      </Toast>
       <div className='w-100 p-6'></div>
     </main>
   );

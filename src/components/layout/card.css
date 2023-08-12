@@ -9,15 +9,22 @@
   overflow: hidden;
   width: 100%;
 }
+
 .dr-card-image-04rq img {
   object-position: center;
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
+
 .dr-card-image-04rq_expander-container {
   height: 2rem;
 }
+
 .dr-card-image-04rq_expander {
   line-height: 1 !important;
+}
+
+.dr-card-options-20lk {
+  cursor: pointer;
 }
