@@ -36,6 +36,7 @@ import {
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
 import { CardContentMeta } from "./components/layout/card";
+import { SimpleModal } from "./components/surfaces/simple_modal";
 
 function App() {
   return (
@@ -323,6 +324,10 @@ function App() {
           override the secondary styles again
         </ListItem>
       </Drawer>
+      <SimpleModal
+        trigger={<Button primary>Open Modal</Button>}
+        title='My Heading'
+      ></SimpleModal>
       <div className='w-100 p-6'></div>
     </main>
   );

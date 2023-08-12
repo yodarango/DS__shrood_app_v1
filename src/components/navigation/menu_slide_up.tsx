@@ -20,6 +20,7 @@ type TPrimaryMenuBkgProps = {
   onClose?: () => void;
   secondary?: boolean;
   className?: string;
+  portalId?: string;
   primary?: boolean;
   danger?: boolean;
   title?: string;
@@ -28,6 +29,7 @@ type TPrimaryMenuBkgProps = {
 };
 
 export const MenuSlideUp = ({
+  portalId = "portal",
   className = "",
   icon = "menu",
   customColors,
@@ -77,7 +79,7 @@ export const MenuSlideUp = ({
 
   return (
     <>
-      <Portal portalId='portal'>
+      <Portal portalId={portalId}>
         {isOpen && (
           <div
             className={`${styles.drMenuSlideupContainer} ${className} ${menuVariantClassNames}`}

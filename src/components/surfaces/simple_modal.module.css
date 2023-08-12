@@ -1,0 +1,61 @@
+.simpleModal {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+}
+
+.topBanner {
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  height: 10rem;
+  width: 100%;
+  background-image: linear-gradient(
+    -10deg,
+    var(--dr-quaternary),
+    var(--dr-quinary)
+  );
+}
+
+.title {
+  height: calc(
+    100% - 3.5rem
+  ); /*height of the toBanner  - negative margin of contentHolder*/
+}
+
+.icon {
+  margin-left: var(--spacing-xs);
+}
+
+.content {
+  max-width: var(--main-wrapper-max-width);
+  width: var(--main-wrapper-width);
+  padding-top: 3rem;
+}
+
+.contentHolder {
+  background-color: var(--dr-primary);
+  border-top-right-radius: 2.5em;
+  border-top-left-radius: 2.5em;
+  height: calc(
+    100vh - 6.5rem
+  ); /*parent height - (height of the topBanner - negative margin)*/
+  margin: -3.5rem auto 0;
+  overflow-x: visible;
+  position: relative;
+  overflow-y: scroll;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.close {
+  z-index: 3;
+  position: fixed;
+  top: var(--dr-spacing-4);
+  right: var(--dr-spacing-4);
+}

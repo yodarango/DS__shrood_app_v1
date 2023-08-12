@@ -128,6 +128,7 @@
   --dr-spacing-5: 2rem;
   --dr-spacing-6: 2.4rem;
   --main-wrapper-max-width: 50rem;
+  --main-wrapper-width: 92%;
 
   /* radiuses */
   --dr-border-radius-sm: 0.5em;
