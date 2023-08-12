@@ -32,11 +32,11 @@ import {
   ButtonGroup,
   Drawer,
   ListItem,
+  Modal,
 } from "./components";
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
 import { CardContentMeta } from "./components/layout/card";
-import { SimpleModal } from "./components/surfaces/simple_modal";
 
 function App() {
   return (
@@ -324,10 +324,140 @@ function App() {
           override the secondary styles again
         </ListItem>
       </Drawer>
-      <SimpleModal
+      <Modal
+        bannerHeight={300}
         trigger={<Button primary>Open Modal</Button>}
         title='My Heading'
-      ></SimpleModal>
+      >
+        <>
+          {[...Array(10)].map((_, i) => (
+            <Card width={350} key={i}>
+              <AvatarWithLabel
+                sx={{ width: 30, height: 30 }}
+                label='username'
+                fontSize={10}
+                src={image}
+                secondary
+              />
+              <CardImage alt='my image' src={image} height={200} />
+              <CardOptions icon='ellipsisH' secondary>
+                <MenuSlideUpItem
+                  icon={"trash"}
+                  value={1}
+                  onClick={() => {}}
+                  danger
+                >
+                  My label with icon string
+                </MenuSlideUpItem>
+              </CardOptions>
+              <CardActionsLeft>
+                <IconButton className='p-0 me-2'>
+                  <Icon name='heart' size={25} />
+                </IconButton>
+                <IconButton className='p-0'>
+                  <Icon name='comment' size={25} />
+                </IconButton>
+              </CardActionsLeft>
+              <CardActionsRight>
+                <ExpandableTag>
+                  <Paragraph className='color-font'>12/12/63</Paragraph>
+                  <Paragraph className='color-font'>04/09/67</Paragraph>
+                </ExpandableTag>
+              </CardActionsRight>
+            </Card>
+          ))}
+        </>
+      </Modal>
+      <Modal
+        bannerHeight={100}
+        trigger={<Button primary>Open Modal</Button>}
+        title='My Heading'
+        secondary
+      >
+        <>
+          {[...Array(10)].map((_, i) => (
+            <Card width={350} key={i}>
+              <AvatarWithLabel
+                sx={{ width: 30, height: 30 }}
+                label='username'
+                fontSize={10}
+                src={image}
+                secondary
+              />
+              <CardImage alt='my image' src={image} height={200} />
+              <CardOptions icon='ellipsisH' secondary>
+                <MenuSlideUpItem
+                  icon={"trash"}
+                  value={1}
+                  onClick={() => {}}
+                  danger
+                >
+                  My label with icon string
+                </MenuSlideUpItem>
+              </CardOptions>
+              <CardActionsLeft>
+                <IconButton className='p-0 me-2'>
+                  <Icon name='heart' size={25} />
+                </IconButton>
+                <IconButton className='p-0'>
+                  <Icon name='comment' size={25} />
+                </IconButton>
+              </CardActionsLeft>
+              <CardActionsRight>
+                <ExpandableTag>
+                  <Paragraph className='color-font'>12/12/63</Paragraph>
+                  <Paragraph className='color-font'>04/09/67</Paragraph>
+                </ExpandableTag>
+              </CardActionsRight>
+            </Card>
+          ))}
+        </>
+      </Modal>
+      <Modal
+        bannerHeight={300}
+        trigger={<Button primary>Open Modal</Button>}
+        title='My Heading'
+        bannerBackground={image}
+      >
+        <>
+          {[...Array(10)].map((_, i) => (
+            <Card width={350} key={i}>
+              <AvatarWithLabel
+                sx={{ width: 30, height: 30 }}
+                label='username'
+                fontSize={10}
+                src={image}
+                secondary
+              />
+              <CardImage alt='my image' src={image} height={200} />
+              <CardOptions icon='ellipsisH' secondary>
+                <MenuSlideUpItem
+                  icon={"trash"}
+                  value={1}
+                  onClick={() => {}}
+                  danger
+                >
+                  My label with icon string
+                </MenuSlideUpItem>
+              </CardOptions>
+              <CardActionsLeft>
+                <IconButton className='p-0 me-2'>
+                  <Icon name='heart' size={25} />
+                </IconButton>
+                <IconButton className='p-0'>
+                  <Icon name='comment' size={25} />
+                </IconButton>
+              </CardActionsLeft>
+              <CardActionsRight>
+                <ExpandableTag>
+                  <Paragraph className='color-font'>12/12/63</Paragraph>
+                  <Paragraph className='color-font'>04/09/67</Paragraph>
+                </ExpandableTag>
+              </CardActionsRight>
+            </Card>
+          ))}
+        </>
+      </Modal>
       <div className='w-100 p-6'></div>
     </main>
   );

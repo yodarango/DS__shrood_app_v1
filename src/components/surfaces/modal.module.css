@@ -1,0 +1,76 @@
+.modal {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  right: 0;
+  top: 0;
+}
+
+.primary .topBanner,
+.secondary .topBanner,
+.bannerImage .topBanner {
+  background-image: linear-gradient(
+    -10deg,
+    var(--dr-quaternary),
+    var(--dr-quinary)
+  );
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  right: 0;
+  top: 0;
+}
+
+.secondary .topBanner {
+  border: 2px solid var(--dr-tertiary);
+  background-color: var(--dr-primary);
+  background-image: none;
+}
+
+.bannerImage .topBanner {
+  background-color: var(--dr-primary);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none;
+}
+
+.secondary .contentHolder {
+  border-top: 2px solid var(--dr-tertiary);
+}
+
+.title {
+  position: relative;
+  top: 0;
+}
+
+.icon {
+  margin-left: var(--spacing-xs);
+}
+
+.content {
+  max-width: var(--main-wrapper-max-width);
+  width: var(--main-wrapper-width);
+  padding-top: 3rem;
+}
+
+.contentHolder {
+  background-color: var(--dr-primary);
+  border-top-right-radius: 2.5em;
+  border-top-left-radius: 2.5em;
+  margin: -3.5rem auto 0;
+  overflow-x: visible;
+  position: relative;
+  overflow-y: scroll;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.close {
+  right: var(--dr-spacing-4);
+  top: var(--dr-spacing-4);
+  position: fixed;
+  z-index: 3;
+}

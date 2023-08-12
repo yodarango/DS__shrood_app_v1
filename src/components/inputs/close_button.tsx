@@ -17,12 +17,12 @@ export const CloseButton = (props: TCloseContentProps) => {
         className={`bg-transparent p-0 m-0 ${styles.drCloseContentIcon} ${className}`}
         onClick={onClick}
       >
-        <Icon name='close' strokeWidth='60' {...rest} />
+        <Icon name='close' strokeWidth='60' {...rest} size={25} />
       </button>
     );
   } else {
     <div className={`${styles.drCloseContentIcon}`} onClick={onClick}>
-      <Icon name='close' strokeWidth='60' {...rest} />
+      <Icon name='close' strokeWidth='60' {...rest} size={25} />
     </div>;
   }
 };
