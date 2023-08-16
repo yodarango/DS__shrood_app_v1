@@ -34,6 +34,10 @@ import {
   ListItem,
   Modal,
   Toast,
+  ModalDialog,
+  ModalDialogContent,
+  ModalDialogActions,
+  ModalDialogHeader,
 } from "./components";
 import image from "./assets/images/empty.webp";
 import { MenuSlideUpItem } from "./components/navigation/menu_slide_up";
@@ -486,7 +490,16 @@ function App() {
       >
         This is my warning message
       </Toast>
-      <div className='w-100 p-6'></div>
+      <ModalDialog label='my label goes here '>
+        <ModalDialogHeader> This is my dialog</ModalDialogHeader>
+        <ModalDialogContent>This is the content </ModalDialogContent>
+        <ModalDialogActions>
+          string
+          <Button secondary>JSX</Button>
+          string again
+        </ModalDialogActions>
+      </ModalDialog>
+      <div className='w-100 p-6' style={{ height: 200 }}></div>
     </main>
   );
 }
