@@ -5,9 +5,9 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: "src/components/index.ts", // Path to your library's entry file
+      entry: "src/index.ts", // Path to your library's entry file
       name: "@shrood/ds", // The name of the global variable for UMD builds
-      fileName: (format) => `shroodds.${format}.js`,
+      fileName: (format) => `ds.${format}.js`,
     },
     rollupOptions: {
       // Externalize peer dependencies

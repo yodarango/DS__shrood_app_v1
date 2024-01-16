@@ -1,7 +1,7 @@
 {
   "name": "@shrood/ds",
-  "version": "1.0.2",
-  "main": "dist/shroodds.umd.js",
+  "version": "1.0.5",
+  "main": "dist/ds.umd.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
