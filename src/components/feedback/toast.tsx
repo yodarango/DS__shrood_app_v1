@@ -3,7 +3,12 @@ import { Alert, Snackbar } from "@mui/material";
 import { CloseButton, Heading, Icon, Paragraph } from "..";
 
 import "./toast.css";
-import { COLOR_PRIMARY, COLOR_TERTIARY } from "../../assets/tokens";
+import {
+  COLOR_DANGER,
+  COLOR_SUCCESS,
+  COLOR_WARNING,
+  FONT_COLOR,
+} from "../../assets/tokens";
 
 interface IToast {
   anchorOrigin?: {
@@ -52,7 +57,7 @@ export const Toast: React.FC<
   let iconName: undefined | string = undefined;
 
   if (success) iconName = "checkmarkCircle";
-  if (danger) iconName = "closeCircled";
+  if (danger) iconName = "warning";
   if (warning) iconName = "warning";
 
   let horizontal, vertical;
@@ -66,12 +71,12 @@ export const Toast: React.FC<
   if (danger || warning || success)
     titleBodyClass = "d-flex align-items-center justify-content-start";
 
-  let closeColor: undefined | string = undefined;
-  if (secondary) closeColor = COLOR_TERTIARY;
-  else if (success || warning) closeColor = COLOR_PRIMARY;
+  let closeColor: undefined | string = FONT_COLOR;
 
-  let iconColor: undefined | string = undefined;
-  if (warning || success) iconColor = COLOR_PRIMARY;
+  let iconColor: undefined | string = FONT_COLOR;
+  if (warning) iconColor = COLOR_WARNING;
+  if (success) iconColor = COLOR_SUCCESS;
+  if (danger) iconColor = COLOR_DANGER;
 
   return (
     <Snackbar
@@ -91,7 +96,11 @@ export const Toast: React.FC<
         {/* For variants "danger, "warning" and "success" render an icon */}
         <div className={titleBodyClass}>
           {iconName && typeof title === "string" && (
-            <Icon name={iconName} className='me-2' color={iconColor} />
+            <Icon
+              name={iconName}
+              className='me-2 flex-shrink-0'
+              color={iconColor}
+            />
           )}
           {typeof title === "string" && (
             <Heading variant='h3' className='mb-1 mx-0 p-0 mt-0'>
@@ -104,7 +113,11 @@ export const Toast: React.FC<
         {typeof children === "string" && (
           <div className={titleBodyClass}>
             {iconName && !title && (
-              <Icon name={iconName} className='me-2' color={iconColor} />
+              <Icon
+                name={iconName}
+                className='me-2 flex-shrink-0'
+                color={iconColor}
+              />
             )}
             <Paragraph>{children}</Paragraph>
           </div>

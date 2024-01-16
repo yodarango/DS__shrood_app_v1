@@ -9,3 +9,4 @@ export { IconButton } from "./icon_button";
 export { Button } from "./button";
 export { Input } from "./input";
 export { Icon } from "./icon";
+export * from "./textarea";

@@ -1,6 +1,7 @@
 export {
   CardActionsRight,
   CardActionsLeft,
+  CardContentMeta,
   CardOptions,
   CardContent,
   CardImage,

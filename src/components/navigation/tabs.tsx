@@ -1,5 +1,5 @@
 import { Tabs as MTabs, Tab as MTab } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./tabs.css";
 
 interface TTabs {

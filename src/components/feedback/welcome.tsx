@@ -1,4 +1,4 @@
-import Image from "../../assets/images/search.webp";
+import Image from "../../assets/images/welcome.webp";
 import { Paragraph } from "../";
 import "./feedback_image.css";
 
@@ -8,7 +8,7 @@ type TEmptyProps = {
   description?: string;
   className?: string;
 };
-export const ResourceNotFoundImage = ({
+export const Welcome = ({
   size = "medium",
   className = "",
   description,

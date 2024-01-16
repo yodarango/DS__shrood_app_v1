@@ -58,7 +58,7 @@ export const RadioGroup = ({
 };
 
 type TRadio = {
-  label: string | JSX.Element | React.ReactNode | number;
+  label?: string | JSX.Element | React.ReactNode | number;
   onChange?: (value: string | number | boolean) => void;
   labelPlacement?: "start" | "end" | "top" | "bottom";
   value: string | number | boolean;

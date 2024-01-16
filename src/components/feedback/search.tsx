@@ -8,7 +8,7 @@ type TEmptyProps = {
   description?: string;
   className?: string;
 };
-export const ResourceNotFoundImage = ({
+export const Search = ({
   size = "medium",
   className = "",
   description,

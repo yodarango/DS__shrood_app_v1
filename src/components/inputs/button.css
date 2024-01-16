@@ -4,29 +4,36 @@
   text-transform: none !important;
   border-radius: 5em !important;
 }
+
 .MuiButton-text {
   color: inherit !important;
 }
 
-.MuiButton-containedPrimary {
+.MuiButton-containedPrimary:not([disabled]) {
   background-image: linear-gradient(
     -10deg,
     var(--dr-quaternary),
     var(--dr-quinary)
   );
-  color: var(--font-color) !important;
+  color: var(--dr-font-color) !important;
 }
 
-.MuiButton-outlinedPrimary.dr-secondary {
+.MuiButton-outlinedPrimary.dr-secondary:not([disabled]) {
   color: var(--dr-tertiary) !important;
   border-color: var(--dr-tertiary) !important;
 }
 
-.MuiButton-containedError {
+.MuiButton-containedError:not([disabled]) {
   background-image: linear-gradient(
     -10deg,
     var(--dr-septenary),
     var(--dr-senary)
   );
-  color: var(--font-color) !important;
+  color: var(--dr-font-color) !important;
+}
+
+.MuiButton-root[disabled] {
+  background-color: var(--dr-octonary) !important;
+  color: var(--dr-font-color) !important;
+  opacity: 0.5 !important;
 }

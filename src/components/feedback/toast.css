@@ -1,23 +1,33 @@
 .MuiAlert-root.dr-alert-custom {
   border-radius: 1.5em;
+  background-color: var(--dr-secondary);
+  border: 1px solid #f1eaff9c;
+  color: var(--font-color);
 }
 
 .MuiAlert-root.dr-primary {
-  background: var(--dr-quaternary);
+  border-color: var(--dr-tertiary);
+
+  /* background: var(--dr-quaternary); */
 }
 .MuiAlert-root.dr-success {
-  background: var(--dr-success);
+  border-color: var(--dr-success);
+
+  /* background: var(--dr-success); */
 }
 
 .MuiAlert-root.dr-danger {
-  background: var(--dr-danger);
+  border-color: var(--dr-danger);
+  /* background: var(--dr-danger); */
 }
 
 .MuiAlert-root.dr-warning {
-  background: var(--dr-warning);
+  border-color: var(--dr-warning);
+
+  /* background: var(--dr-warning); */
 }
 
-.MuiAlert-root.dr-secondary {
+/* .MuiAlert-root.dr-secondary {
   background: var(--dr-secondary);
   border: 1px solid var(--dr-tertiary);
 }
@@ -34,4 +44,4 @@
 .MuiAlert-root.dr-success *,
 .MuiAlert-root.dr-warning * {
   color: var(--dr-primary);
-}
+} */

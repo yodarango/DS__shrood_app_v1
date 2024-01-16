@@ -1,10 +1,30 @@
 .drExpandableTabContainerClosed,
 .drExpandableTabContainerOpen {
-  background-color: var(--dr-secondary);
   transition: 300ms transform ease-in;
   box-shadow: var(--dr-box-shadow);
   border-radius: 3rem;
   cursor: pointer;
+}
+
+.drExpandableTabContainer > .primary {
+  background-image: linear-gradient(
+    -10deg,
+    var(--dr-quaternary),
+    var(--dr-quinary)
+  );
+}
+
+.drExpandableTabContainer > .secondary {
+  background-color: var(--dr-secondary);
+  border: 1px solid var(--dr-tertiary);
+}
+
+.drExpandableTabContainer > .danger {
+  background-image: linear-gradient(
+    -10deg,
+    var(--dr-septenary),
+    var(--dr-senary)
+  );
 }
 
 .drExpandableTabContainerIcon {

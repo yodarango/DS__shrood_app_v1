@@ -12,6 +12,7 @@ specifiers:
   eslint: ^8.45.0
   eslint-plugin-react-hooks: ^4.6.0
   eslint-plugin-react-refresh: ^0.4.3
+  prop-types: ^15.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
   typescript: ^5.0.2
@@ -21,6 +22,7 @@ dependencies:
   '@emotion/react': 11.11.1_tznpbkknyqq5lcv5sgrl332jvu
   '@emotion/styled': 11.11.0_ihu55mvnfzooybzcklvkvwcuuy
   '@mui/material': 5.14.1_aq5jutf6cr66txe4mu4a5j4iuy
+  prop-types: 15.8.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 

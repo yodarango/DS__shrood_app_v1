@@ -3,6 +3,7 @@ import "./paragraph.css";
 
 export const Paragraph: typeof Typography = (props: any) => {
   const { fontSize, lineHeight, fontWeight, ...rest } = props;
+
   return (
     <Typography
       fontSize={fontSize ? `${fontSize * 0.1}rem` : "1.6rem"}

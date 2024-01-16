@@ -1,1 +1,2 @@
-export { Portal } from "./portal";
+export { IfElse } from "./ifelse";
+export { If } from "./if";

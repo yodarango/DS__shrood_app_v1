@@ -1,0 +1,21 @@
+.dr-textarea-347fsj,
+.dr-textarea-347fsj--bordered {
+  color: var(--dr-font-color);
+  padding: var(--dr-spacing-2);
+  background-color: var(--dr-secondary);
+  border-radius: 1rem;
+  display: block;
+  width: 100%;
+  resize: none;
+  border-radius: 1.5em;
+}
+
+.dr-textarea-347fsj::placeholder,
+.dr-textarea-347fsj--bordered::placeholder {
+  color: #f1eaff75;
+}
+
+.dr-textarea-347fsj--bordered {
+  border: 1px solid var(--dr-tertiary);
+  outline: 1px solid var(--dr-tertiary);
+}

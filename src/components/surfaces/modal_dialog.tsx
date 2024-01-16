@@ -4,6 +4,7 @@ import "./modal_dialog.css";
 import React from "react";
 
 interface IModalDialog {
+  onBackdropClose?: (e: object, reason: string) => void;
   title?: string | React.ReactNode | JSX.Element;
   label?: string | React.ReactNode | JSX.Element;
   onAcknowledgeAction?: () => void;
@@ -25,6 +26,7 @@ export const ModalDialog: React.FC<
     onAcknowledgeAction,
     onNegativeAction,
     onPositiveAction,
+    onBackdropClose,
     className,
     children,
     label,
@@ -35,7 +37,7 @@ export const ModalDialog: React.FC<
   } = props;
 
   return (
-    <Modal open={open}>
+    <Modal open={open} onClose={onBackdropClose}>
       <Box className={`${className || ""} dr-modal-dialog`} {...rest}>
         <div>
           {typeof children === "object" &&

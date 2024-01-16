@@ -3,6 +3,10 @@
   border-radius: 1.5em;
 }
 
+.dr-card-34kt.border {
+  border-color: #f1eaff91 !important;
+}
+
 .dr-card-image-04rq {
   background-color: var(--dr-octonary);
   border-radius: 1em;

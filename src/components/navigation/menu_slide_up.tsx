@@ -1,7 +1,16 @@
+/*************************************************************************************************************
+ * this component has its own open and close state. Do not pass it down from the parent or it will run into
+ * conflict whit the local state. The component does have a onClose() callback to perform tasks upon
+ * closing the menu. It also has a open prop to control the state from the parent on the first
+ * render only. If you wish to close the menu after a selection has been made pass the
+ * closeOnSelect prop to the MenuSlideUp component. ⭐️
+ * ****************************************************
+ */
+
 import { CloseButton } from "../inputs/close_button";
 import React, { useEffect, useState } from "react";
 import { Heading } from "../data_display/heading";
-import { Icon, IconButton, Portal } from "..";
+import { Icon, IconButton, Loading, Portal } from "..";
 import {
   COLOR_QUATERNARY,
   COLOR_SEPTENARY,
@@ -17,11 +26,13 @@ type TPrimaryMenuBkgProps = {
   onSelect?: (value: string | number) => void;
   customColors?: [string, string?];
   iconProps?: typeof IconButton;
+  closeOnSelect?: boolean;
   onClose?: () => void;
   secondary?: boolean;
   className?: string;
-  portalId?: string;
   primary?: boolean;
+  loading?: boolean;
+  iconSize?: number;
   danger?: boolean;
   title?: string;
   open?: boolean;
@@ -29,13 +40,15 @@ type TPrimaryMenuBkgProps = {
 };
 
 export const MenuSlideUp = ({
-  portalId = "portal",
+  closeOnSelect,
   className = "",
   icon = "menu",
+  iconSize = 40,
   customColors,
   secondary,
   iconProps,
   children,
+  loading,
   onClose,
   primary,
   danger,
@@ -59,6 +72,7 @@ export const MenuSlideUp = ({
     bkgColor = `${customColors[0]}`;
 
   const handleClose = () => {
+    document.body.style.overflowY = "unset";
     setIsOpen(false);
     if (onClose) onClose();
   };
@@ -71,15 +85,25 @@ export const MenuSlideUp = ({
   // pass the variant to the children so you dont have to specify it in each
   const childrenWithProps = React.Children.map(children, (child) => {
     return React.cloneElement(child, {
+      onClick: (val: any) => {
+        child.props.onClick(val);
+        document.body.style.overflowY = "unset";
+        if (closeOnSelect) setIsOpen(false);
+      },
       secondary,
       primary,
       danger,
     });
   });
 
+  const setIconProps = {
+    ...iconProps,
+    sx: { width: iconSize, height: iconSize },
+  };
+
   return (
     <>
-      <Portal portalId={portalId}>
+      <Portal>
         {isOpen && (
           <div
             className={`${styles.drMenuSlideupContainer} ${className} ${menuVariantClassNames}`}
@@ -104,45 +128,58 @@ export const MenuSlideUp = ({
       {typeof icon === "string" && (
         <div className={`${styles.drMenuSlideupContainerfg34}`}>
           <IconButton
-            {...iconProps}
+            {...setIconProps}
             {...iconVariants}
+            loading={loading}
             onClick={() => setIsOpen(!isOpen)}
           >
             <Icon name={icon} />
           </IconButton>
         </div>
       )}
-      {typeof icon !== "string" && (
+
+      {!loading && typeof icon !== "string" && (
         <div
           className={`${styles.drMenuSlideupContainerfg34}`}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            setIsOpen(!isOpen);
+            document.body.style.overflowY = !isOpen ? "hidden" : "unset";
+          }}
         >
           {icon}
         </div>
+      )}
+
+      {loading && typeof icon !== "string" && (
+        <Loading primary={primary} secondary={secondary} danger={danger} />
       )}
     </>
   );
 };
 
 type TMenuPrimaryOption = {
-  onClick: (value: string | number | boolean) => void;
+  onClick: (value: any, closeOnSelect: boolean) => void;
   value: string | number | boolean;
   iconProps?: typeof IconButton;
+  closeOnSelect?: boolean;
   secondary?: boolean;
   className?: string;
   primary?: boolean;
   danger?: boolean;
+  loading?: boolean;
   children: any;
   icon?: any;
 };
 
 export const MenuSlideUpItem = ({
+  closeOnSelect,
   iconProps,
   className,
   children,
   secondary,
   onClick,
   primary,
+  loading,
   value,
   danger,
   icon,
@@ -150,17 +187,20 @@ export const MenuSlideUpItem = ({
   const shadowClass = secondary ? "shadow-box-tertiary" : "shadow-light";
 
   return (
-    <div className={`dr-menuslideup-option-container mb-2 ${className}`}>
-      <div className='d-flex align-items-center justify-content-start'>
+    <div className={`dr-menuslideup-option-container mb-3 ${className}`}>
+      <div
+        className='d-flex align-items-center justify-content-start'
+        onClick={() => onClick(value, !!closeOnSelect)}
+      >
         <div
           className={`ms-1 me-2 shrink-0 ${styles.drMenuslideupOptionContainerIcon} ${shadowClass}`}
-          onClick={() => onClick(value)}
         >
           {typeof icon === "string" && (
             <IconButton
               secondary={secondary}
               primary={primary}
               danger={danger}
+              loading={loading}
               {...iconProps}
             >
               <Icon name={icon} />
@@ -168,12 +208,16 @@ export const MenuSlideUpItem = ({
           )}
           {icon &&
             typeof icon !== "string" &&
-            React.cloneElement(icon, { secondary, primary, danger })}
+            React.cloneElement(icon, {
+              secondary,
+              primary,
+              danger,
+            })}
         </div>
+
         <div>
           <div
             className={`${styles.drMenuslideupOptionLabel} py-2 px-0 d-inline-block`}
-            onClick={() => onClick(value)}
           >
             {children}
           </div>

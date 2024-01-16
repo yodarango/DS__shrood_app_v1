@@ -7,12 +7,13 @@ import styles from "./avatar_with_label.module.css";
 export interface IAvatarWithLabel {
   label: string | React.ReactNode | JSX.Element;
   align?: "start" | "end" | "bottom" | "top";
+  className?: string;
   fontSize?: number;
 }
 export const AvatarWithLabel: React.FC<
   Omit<React.ComponentProps<typeof Avatar>, "variant"> & IAvatarWithLabel
 > = (props: any) => {
-  const { label, align, fontSize, ...rest } = props;
+  const { label, align, fontSize, className, ...rest } = props;
 
   // default row start
   let alignment = "flex-row align-items-center ";
@@ -25,7 +26,7 @@ export const AvatarWithLabel: React.FC<
       break;
     case "bottom":
       alignment = "flex-column justify-content-start align-items-start";
-      margin = "mt-2";
+      margin = "mt-0";
       break;
     case "top":
       alignment = "flex-column-reverse justify-content-start align-items-start";
@@ -33,7 +34,11 @@ export const AvatarWithLabel: React.FC<
       break;
   }
   return (
-    <div className={`${styles.drAvatarWithLabel} d-flex ${alignment}`}>
+    <div
+      className={`${styles.drAvatarWithLabel} d-flex ${alignment} ${
+        className || ""
+      }`}
+    >
       <div className={`${styles.drAvatarWithLabelAvatar}`}>
         <Avatar {...rest} />
       </div>

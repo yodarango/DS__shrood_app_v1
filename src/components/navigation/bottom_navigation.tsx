@@ -2,7 +2,7 @@ import {
   BottomNavigation as MBottomNavigation,
   BottomNavigationAction,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./bottom_navigation.css";
 
 interface TBottomNavigation {

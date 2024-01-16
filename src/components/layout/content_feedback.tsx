@@ -3,7 +3,7 @@ import styles from "./content_feedback.module.css";
 type TContentFeedback = {
   className?: string;
   height?: number;
-  width?: number;
+  width?: number | string;
   style?: React.CSSProperties;
   children: any;
 };

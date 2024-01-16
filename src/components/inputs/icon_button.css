@@ -1,3 +1,7 @@
+.MuiButtonBase-root {
+  border-radius: var(--dr-border-radius) !important;
+}
+
 .MuiIconButton-colorPrimary {
   background-image: linear-gradient(
     -10deg,
@@ -24,4 +28,8 @@
     var(--dr-senary)
   );
   border-radius: var(--dr-border-radius) !important;
+}
+
+.MuiIconButton-root.Mui-disabled {
+  opacity: 0.5;
 }

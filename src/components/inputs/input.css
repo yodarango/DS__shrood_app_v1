@@ -8,6 +8,22 @@
   outline: none;
 }
 
+/* .MuiFormLabel-root.MuiInputLabel-root {
+  display: none;
+}
+
+.MuiInputBase-root legend {
+  display: none;
+} */
+
+.MuiInputBase-root input {
+  padding: var(--dr-spacing-3) var(--dr-spacing-4);
+}
+
+.MuiInputBase-root input::placeholder {
+  color: var(--dr-font-color);
+}
+
 .MuiInputBase-multiline {
   border: 1px solid var(--dr-tertiary);
   background-color: var(--dr-secondary);
